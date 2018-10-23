@@ -1,0 +1,22 @@
+alias: "Släck Fönsterlampor Vardag o Sön"
+initial_state: true
+trigger:
+  platform: time
+  at: "22:45:00"
+condition:
+  condition: and
+  conditions:
+   - condition: time
+     weekday:
+     - mon
+     - tue
+     - wed
+     - thu
+     - sun
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+action:
+  service: light.turn_off
+  entity_id: 
+   - light.all_windows

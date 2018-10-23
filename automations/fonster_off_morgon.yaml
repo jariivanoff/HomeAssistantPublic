@@ -1,0 +1,12 @@
+alias: "Släck Morgon"
+initial_state: true
+trigger:
+  platform: numeric_state
+  entity_id: sun.sun
+  value_template: '{{ state.attributes.elevation }}'
+  above: 10.0
+action: 
+ service: light.turn_off
+ entity_id: 
+   - light.all_windows
+  

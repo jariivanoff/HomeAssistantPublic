@@ -1,0 +1,28 @@
+alias: "Slå av värme BV"
+initial_state: true
+trigger:
+  platform: time
+  at: '07:30:00'
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: switch.heatpump 
+     state: 'on'      
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+   - condition: state
+     entity_id: calendar.barnvecka
+     state: 'on'
+   - condition: time
+     weekday:
+     - mon
+     - tue
+     - wed
+     - thu
+     - fri
+action: 
+  service: switch.turn_off
+  entity_id: 
+   - switch.heatpump

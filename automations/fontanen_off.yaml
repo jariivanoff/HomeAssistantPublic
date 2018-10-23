@@ -1,0 +1,10 @@
+alias: "Stäng av fontänen"
+initial_state: false
+trigger:
+  platform: sun
+  event: sunset
+  offset: "00:45:00"
+action:
+  service: switch.turn_off
+  entity_id: 
+   - switch.ute_fontanen 

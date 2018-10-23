@@ -1,0 +1,34 @@
+alias: "Power state on HA start-up"
+initial_state: true
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffpow01/POWER"
+      payload: ""
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffpow02/POWER"
+      payload: ""
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffs2001/POWER"
+      payload: "" 
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffs2002/POWER"
+      payload: ""
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffs2003/POWER"
+      payload: ""
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffs2004/POWER"
+      payload: ""
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffs2005/POWER"
+      payload: ""

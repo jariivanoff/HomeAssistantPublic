@@ -1,0 +1,31 @@
+alias: "Starta motorvärmare BV"
+initial_state: true
+trigger:
+  platform: time
+  at: "06:10:00"
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: calendar.barnvecka
+     state: 'on'
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+   - condition: numeric_state
+     entity_id: sensor.151_temperature
+     below: '10'
+   - condition: time
+     weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+   - service: switch.turn_on
+     entity_id: 
+      - switch.pexen_heater
+   - service: notify.html5
+     data_template:
+       message: "Motorvärmaren startad"

@@ -1,0 +1,20 @@
+alias: "BF Släck fönster barnrum helg"
+initial_state: false
+trigger:
+  platform: time
+  at: "00:59:30"
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: calendar.barnvecka
+     state: 'off'
+   - condition: time
+     weekday:
+      - fri
+      - sat
+action:
+  service: light.turn_off
+  entity_id: 
+   - light.linus_fh
+   - light.ellas_fh

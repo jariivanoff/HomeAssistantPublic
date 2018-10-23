@@ -1,0 +1,22 @@
+alias: "Underhållsvärme dagtid av helg"
+initial_state: true
+trigger:
+  platform: numeric_state
+  entity_id: sensor.medeltemp_markplan
+  above: '22.5'
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: switch.heatpump 
+     state: 'on'    
+   - condition: time
+     after: '08:15:00'
+     before: '23:00:00'
+     weekday:
+      - sun
+      - sat
+action: 
+   service: switch.turn_off
+   entity_id: 
+     - switch.heatpump

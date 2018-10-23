@@ -1,0 +1,9 @@
+alias: "Släck utebelysning natt"
+initial_state: true
+trigger:
+  platform: time
+  at: "01:00:00"
+action:
+  service: light.turn_off
+  entity_id: 
+   - light.outdoors

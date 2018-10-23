@@ -1,0 +1,28 @@
+alias: "Slå på värme morgon BV"
+initial_state: true
+trigger:
+  platform: time
+  at: '04:45:00'
+condition:
+  condition: and
+  conditions:
+   - condition: numeric_state
+     entity_id: sensor.medeltemp_markplan
+     below: '22.5'
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+   - condition: state
+     entity_id: calendar.barnvecka
+     state: 'on'
+   - condition: time
+     weekday:
+     - mon
+     - tue
+     - wed
+     - thu
+     - fri
+action: 
+  service: switch.turn_on
+  entity_id: 
+   - switch.heatpump

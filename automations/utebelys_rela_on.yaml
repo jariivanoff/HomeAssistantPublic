@@ -1,0 +1,10 @@
+alias: "Tänd utebelysning relä"
+initial_state: false
+trigger:
+  platform: state
+  entity_id: switch.skymningssensor_ute
+  to: 'on'
+action: 
+  service: light.turn_on
+  entity_id: 
+   - light.outdoors

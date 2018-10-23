@@ -1,0 +1,14 @@
+alias: "Tänd utebelysning tid PM"
+initial_state: true
+trigger:
+  platform: sun
+  event: sunset
+  offset: "-00:15:00"
+action: 
+#  - service: switch.turn_on
+#    entity_id: 
+#    - switch.skymningssensor_ute
+  service: light.turn_on
+  entity_id: 
+   - light.outdoors
+    

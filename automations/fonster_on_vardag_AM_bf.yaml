@@ -1,0 +1,27 @@
+alias: "BF Tänd Morgon"
+initial_state: true
+trigger:
+  platform: time
+  at: '05:15:00'
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+   - condition: state
+     entity_id: calendar.barnvecka
+     state: 'off'
+   - condition: time
+     weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri
+action: 
+  service: light.turn_on
+  entity_id: light.all_windows
+  data:
+     transition: 60
+     brightness_pct: 60 

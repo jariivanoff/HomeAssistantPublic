@@ -1,0 +1,14 @@
+alias: "Slå på värme helg"
+initial_state: true
+trigger:
+  platform: time
+  at: '06:00:00'
+condition:
+  condition: time
+  weekday:
+   - sat
+   - sun
+action: 
+   service: switch.turn_on
+   entity_id: 
+    - switch.heatpump

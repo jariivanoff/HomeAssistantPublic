@@ -1,0 +1,25 @@
+alias: "Underhållsvärme av nattetid"
+initial_state: true
+trigger:
+  platform: numeric_state
+  entity_id: sensor.medeltemp_markplan
+  above: '20.0'
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: switch.heatpump 
+     state: 'on'    
+   - condition: time
+     after: '23:00:00'
+     before: '04:00:00'
+     weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action: 
+   service: switch.turn_off
+   entity_id: 
+     - switch.heatpump

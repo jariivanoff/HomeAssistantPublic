@@ -1,0 +1,28 @@
+alias: "Larmnotifiering"
+initial_state: true
+trigger:
+   - platform: state
+     entity_id: alarm_control_panel.home_alarm 
+     to: 'triggered'
+#   - platform: state
+#     entity_id: binary_sensor.dorrar
+#     to: 'on'
+#   - platform: state
+#     entity_id: binary_sensor.first_floor_motion
+#     to: 'on'
+#   - platform: state
+#     entity_id: binary_sensor.koksdorr
+#     to: 'on'
+#   - platform: state
+#     entity_id: binary_sensor.larmskapet
+#     to: 'on'
+#condition:
+#  condition: and
+#  conditions:
+#    - condition: state
+#      entity_id: alarm_control_panel.home_alarm
+#      state: 'armed_away'   
+action:
+   service: notify.html5
+   data_template:
+     message: "Larm utlöst"

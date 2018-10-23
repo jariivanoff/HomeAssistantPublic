@@ -1,0 +1,14 @@
+alias: "Starta Cirkulationspump Element"
+initial_state: true
+trigger:
+   platform: state
+   entity_id: switch.heatpump 
+   to: 'on'
+   for:
+    hours: 0
+    minutes: 15
+    seconds: 0
+action: 
+  service: switch.turn_on
+  entity_id: 
+    - switch.sonoffs2004

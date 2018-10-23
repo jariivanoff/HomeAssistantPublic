@@ -1,0 +1,13 @@
+alias: "Tänd utebelysning natt"
+initial_state: true
+trigger:
+  platform: time
+  at: "05:00:00"
+condition:
+  condition: state
+  entity_id: sun.sun
+  state: 'below_horizon'
+action:
+  service: light.turn_on
+  entity_id: 
+   - light.outdoors

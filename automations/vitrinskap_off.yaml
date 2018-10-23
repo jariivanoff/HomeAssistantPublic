@@ -1,0 +1,17 @@
+alias: "Släck vitrinskåp finrum"
+initial_state: true
+trigger:
+  platform: time
+  at: "23:50:00"
+condition:
+  condition: time
+  weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - sun
+action:
+  service: light.turn_off
+  entity_id: 
+  - light.vitrinskap
