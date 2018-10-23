@@ -1,0 +1,417 @@
+ sensor.135_temperature:
+   friendly_name: Kök Temp
+
+ sensor.135_humidity:
+   friendly_name: Kök Luftfukt
+   icon: mdi:water
+
+
+ sensor.21_temperature:
+   friendly_name: Sovrum Temp
+
+ sensor.21_humidity:
+   friendly_name: Sovrum Luftfukt
+   icon: mdi:water
+
+ sensor.22_temperature:
+   friendly_name: TV-Rum Temp
+
+ sensor.22_humidity:
+   friendly_name: TV-Rum Luftfukt
+   icon: mdi:water
+  
+ sensor.183_temperature:
+   friendly_name: Gillestuga Temp
+
+ sensor.183_humidity:
+   friendly_name: Gillestuga Luftfukt
+   icon: mdi:water
+   
+ sensor.24_temperature:
+   friendly_name: Tvättstuga Temp
+
+ sensor.24_humidity:
+   friendly_name: Tvättstuga Luftfukt
+   icon: mdi:water
+
+ sensor.167_temperature:
+   friendly_name: Källarhall Temp
+
+ sensor.167_humidity:
+   friendly_name: Källarhall Luftfukt
+   icon: mdi:water   
+
+ sensor.168_temperature:
+   friendly_name: Frysbox Temp
+   
+ sensor.11_temperature:
+   friendly_name: Linus Rum Temp
+
+ sensor.11_humidity:
+   friendly_name: Linus Rum Luftfukt
+   icon: mdi:water
+
+ sensor.32_temperature:
+   friendly_name: Ellas Rum Temp
+
+ sensor.32_humidity:
+   friendly_name: Ellas Rum Luftfukt
+   icon: mdi:water
+  
+ sensor.33_temperature:
+   friendly_name: Finrum Temp
+
+ sensor.33_humidity:
+   friendly_name: Finrum Luftfukt
+   icon: mdi:water  
+
+# Utomhus
+ sensor.199_temperature:
+   friendly_name: Södergavel Ute Temp
+
+ sensor.199_humidity:
+   friendly_name: Södergavel Ute Luftfukt
+   icon: mdi:water  
+
+ sensor.151_temperature:
+   friendly_name: Norrgavel Ute Temp
+
+ sensor.151_humidity:
+   friendly_name: Norrgavel Ute Luftfukt
+   icon: mdi:water
+
+
+# Hobbyrum
+ sensor.215_temperature:
+   friendly_name: Hobbyrum Temp
+
+ sensor.215_humidity:
+   friendly_name: Hobbyrum Luftfukt
+   icon: mdi:water  
+
+ #Badrum
+ sensor.247_humidity:
+   friendly_name: Badrum Luftfukt
+   icon: mdi:water  
+ 
+ sensor.247_temperature:
+   friendly_name: Badrum Temp
+
+# sensor.net_temp_tvattstuga_temperature:
+#   friendly_name: Tvättstuga Temp
+  
+# sensor.net_temp_tvattstuga_humidity:
+#   friendly_name: Tvättstuga Luftfukt
+#   icon: mdi:water
+
+#    sensor.39_temperatiure:
+#      friendly_name: Vinden Temp sensor.39_humidity: friendly_name: 
+#     Vinden Luftfukt icon: mdi:water
+
+ sun.sun:
+   friendly_name: Sol
+ sensor.yr_symbol:
+   friendly_name: Väder
+   entity_picture: //api.met.no/weatherapi/weathericon/1.1/?symbol=1;content_type=image/png
+ sensor.moon:
+   friendly_name: Måne
+ 
+ switch.heatpump:
+   friendly_name: "IVT On/Off"
+ 
+ sensor.time_date:
+   friendly_name: Datum & Tid
+
+ script.ivt_settemp_18:
+   friendly_name: 18 grader
+ script.ivt_settemp_19:
+   friendly_name: 19 grader
+ script.ivt_settemp_20:
+   friendly_name: 20 grader
+ script.ivt_settemp_21:
+   friendly_name: 21 grader
+ script.ivt_settemp_22:
+   friendly_name: 22 grader
+ script.ivt_settemp_23:
+   friendly_name: 23 grader
+ script.ivt_settemp_24:
+   friendly_name: 24 grader
+ script.ivt_settemp_25:
+   friendly_name: 25 grader
+ script.ivt_settemp_26:
+   friendly_name: 26 grader
+ script.ivt_settemp_27:
+   friendly_name: 27 grader
+ script.ivt_settemp_28:
+   friendly_name: 28 grader
+ script.ivt_settemp_29:
+   friendly_name: 29 grader
+ script.ivt_settemp_30:
+   friendly_name: 30 grader
+ script.ivt_settemp_31:
+   friendly_name: 31 grader
+ script.ivt_settemp_32:
+   friendly_name: 32 grader
+ 
+ script.ivt_fan_1:
+   icon: mdi:fan
+ script.ivt_fan_2:
+   icon: mdi:fan
+ script.ivt_fan_3:
+   icon: mdi:fan
+ script.ivt_fan_4:
+   icon: mdi:fan
+
+
+ sensor.pexen_fuel_amount:
+   friendly_name: Kvarvarande bränsle (l)
+ sensor.pexen_fuel_level:
+   friendly_name: Kvarvarande bränsle (%)
+ sensor.pexen_range:
+  friendly_name: Räckvidd
+ sensor.pexen_odometer:
+  friendly_name: Mätarställning
+ binary_sensor.pexen_windows:
+  friendly_name: Fönster
+ binary_sensor.pexen_washer_fluid:
+  friendly_name: Spolarvätska
+ binary_sensor.pexen_service:
+  friendly_name: Service
+ binary_sensor.pexen_doors:
+  friendly_name: Dörrar
+ binary_sensor.pexen_bulbs:
+  friendly_name: Lampor
+ binary_sensor.pexen_brake_fluid:
+  friendly_name: Bromsvätska   
+ lock.pexen_lock:
+  friendly_name: Lås
+ switch.pexen_heater:
+  friendly_name: Värmare 
+
+
+ #switch.kokshallen:
+ # assumed_state: false
+ switch.ute_koksdorren:
+  assumed_state: false
+ switch.ute_stora_entren:
+  assumed_state: false
+ switch.ute_balkongen:
+  assumed_state: false
+
+
+ #switch.finrum_vitrinskap:
+ # assumed_state: false
+
+ #light.fonster_stora_koksfonstret:
+ # assumed_state: false 
+ #light.fonster_finrum:
+ # assumed_state: false
+ #light.tv_rummet_fonster:
+ # assumed_state: false
+
+ #light.fonster_linus:
+ # assumed_state: false
+ #light.fonster_sovrum:
+ # assumed_state: false
+
+ #light.fonster_stora_hallen:
+ # assumed_state: false
+
+ #light.gillestuga_fonster_bak:
+ # assumed_state: false
+ #light.gillestuga_lampa_stereobank:
+ # assumed_state: false
+ #light.gillestuga_uplight_fram:
+ # assumed_state: false
+ #light.gillestuga_uplight_bak:
+ # assumed_state: false
+
+# light.kallare_gula_rummet:
+#  assumed_state: false
+# light.finrum_vitrinskap:
+#  assumed_state: false
+
+ media_player.gillestugan_chrome:
+  friendly_name: Chromecast Gillestugan
+ media_player.tvrummet_chrome:
+  friendly_name: Chromecast TV-rummet
+ media_player.kodi_libreeleclocal:
+  friendly_name: Kodi Gillestugan
+ media_player.kodi_openeleclocal:
+  friendly_name: Kodi TV-rummet
+
+ sensor.cristen_current_state:
+  friendly_name: Cristin Current State
+ sensor.cristen_job_percentage:
+  friendly_name: Cristin Current Job %
+ sensor.cristen_actual_tool0_temp:
+  friendly_name: Cristin Nozzle 0 Temp
+ sensor.cristen_target_tool0_temp:
+  friendly_name: Cristin Nozzle 0 Target Temp
+ sensor.cristen_actual_bed_temp:
+  friendly_name: Cristin Bed Temp
+ sensor.cristen_target_bed_temp:
+  friendly_name: Cristin Target Bed Temp
+
+# SonOff MQTT Switchar
+ switch.sonoffpow01:
+  friendly_name: "Tove"
+ sensor.sonoffpow01_voltage:
+  friendly_name: Tove V
+ sensor.sonoffpow01_current:
+  friendly_name: Tove A
+ sensor.sonoffpow01_draw:
+  friendly_name: Tove W
+ sensor.sonoffpow01_today:
+  friendly_name: Tove Today
+ sensor.sonoffpow01_total:
+  friendly_name: Tove Total
+ sensor.sonoffpow01_yesterday:
+  friendly_name: Tove Yesterday
+
+ switch.sonoffpow02:
+  friendly_name: "Cristin"
+ sensor.sonoffpow02_voltage:
+  friendly_name: Cristin V
+ sensor.sonoffpow02_current:
+  friendly_name: Cristin A
+ sensor.sonoffpow02_draw:
+  friendly_name: Cristin W
+ sensor.sonoffpow02_today:
+  friendly_name: Cristin Today
+ sensor.sonoffpow02_total:
+  friendly_name: Cristin Total
+ sensor.sonoffpow02_yesterday:
+  friendly_name: Cristin Yesterday
+
+ switch.broadlink1:
+  friendly_name: "Cirk.pump Kamin"
+ sensor.broadlinkpow1:
+  friendly_name: "Cirk.pump Kamin Effekt"
+
+ switch.sonoffs2004:
+  friendly_name: "Cirk.pump Radiator"
+ 
+ switch.broadlink2:
+  friendly_name: "Tvättmaskin"
+ sensor.broadlinkpow2:
+  friendly_name: "Tvättmaskin Effekt"
+
+
+
+
+  # Vardagsrum
+ light.couchh:
+  friendly_name: "Soffa"
+ light.vardagsrumt:
+  friendly_name: "Tak"
+ light.tak1h:
+  friendly_name: "Tak 1"
+ light.tak2h:
+  friendly_name: "Tak 2"
+
+# Köket
+ light.tableh:
+  friendly_name: "Matbordet"
+ light.kitchensink:
+  friendly_name: "Diskbänken"
+ light.kitchenfan:
+  friendly_name: "Spisfläkten"
+ light.kitchenf1h:
+  friendly_name: "Stora Fönstret"
+#  assumed_state: false
+ light.kitchenf2h:
+  friendly_name: "Lilla Fönstret"
+#  assumed_state: false
+
+# Köket enskilda lampor
+ light.kitchenf1:
+  friendly_name: "Köksfläkt 1"
+ light.kitchenf2:
+  friendly_name: "Köksfläkt 2"
+ light.diskbank1h:
+  friendly_name: "Diskbänk1"
+ light.diskbank2h:
+  friendly_name: "Diskbänk2"
+ light.diskbank3h:
+  friendly_name: "Diskbänk3"
+ light.diskbank4h:
+  friendly_name: "Diskbänk4"
+ 
+# Badrummet
+ light.badrum:
+  friendly_name: "Badrummet"
+ light.spegelh:
+  friendly_name: "Handfatet"
+ light.takh:
+  friendly_name: "Taket"
+  
+# Alla lampor
+ light.all_windows:
+  friendly_name: "Alla Fönsterlampor"
+ light.outdoors:
+  friendly_name: "Alla Utelampor"
+ light.entire_house:
+  friendly_name: "Hela Huset"
+
+#Ellas rum
+ light.ellash:
+  friendly_name: "Tak"
+ light.ellasfh:
+  friendly_name: "Fönster"
+
+# Linus rum
+ light.linush:
+  friendly_name: "Tak"
+ light.linusfh:
+  friendly_name: "Fönster"
+
+#Gillestuga
+ light.gillestugan:
+  friendly_name: "Alla"
+ light.fronth:
+  friendly_name: "Tak Fram"
+ light.trappah:
+  friendly_name: "Trappa"
+ light.backh:
+  friendly_name: "Tak Bak"
+ light.stereoh:
+  friendly_name: "Stereo"
+ 
+# Kökshallen
+ light.takhh:
+  friendly_name: "Tak" 
+ light.kokshall_vagg:
+  friendly_name: "Vägg" 
+  assumed_state: false
+
+# Hallen
+ light.stora_hallen:
+  friendly_name: "Stora Hallen"
+ light.halled1h:
+  friendly_name: "Tak Dörr 1" 
+ light.halled2h:
+  friendly_name: "Tak Dörr 2" 
+ light.halleb1h:
+  friendly_name: "Tak Bad 1" 
+ light.halleb2h:
+  friendly_name: "Tak Bad 2" 
+ light.halldoor:
+  friendly_name: "Tak Dörr" 
+ light.hallbath:
+  friendly_name: "Tak Bad" 
+
+# Sovrummet
+ light.sovrumt:
+  friendly_name: "Taklampa"
+ light.sovrumfh:
+  friendly_name: "Fönster"
+ light.taks1h:
+  friendly_name: "Tak 1"
+ light.taks2h:
+  friendly_name: "Tak 2"
+ light.taks3h:
+  friendly_name: "Tak 3"
+
+
+ 

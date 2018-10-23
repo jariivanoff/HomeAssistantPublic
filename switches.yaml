@@ -1,0 +1,124 @@
+# Broadlink RM Mini 1
+ - platform: broadlink
+   host: 192.168.3.103
+   mac: '34:EA:34:8A:39:0C'
+   timeout: 15
+   switches:
+    heatpump:
+      friendly_name: 'IVT On/Off'
+      command_on: 'JgDWAHs+DxAPLw4QDy8PEQ4vDxAPLw4RDi8PEA8vDy8PEA4wEA8OLw8vDy8OLw8QDxEOLw8vDxAPEA4RDREOMA8QDxAOEQ4wDy8OEQ4vDhEOEQ4RDhEOLw8QDxEOEQ0wDxAOEQ4RDi8PEA4RDhEOEQ4wDxAPEA8QDhEOEA4wDxAPEA4QDhEOEQ8RDhEOLw8QDxAPEA4RDREOEQ8QDxAPEA4RDhEOMA8QDhENEQ4RDxAPEA4RDhENEQ4RDzAOEQ4vDy8PLg8vDy8PEA4RDhEPLw8uDy8PEA4ADQUAAA=='
+      command_off: 'JgDWAHw+DxAPLw8QDi8PEA8wDhAPLw8QDjAOEA8vDy8OEQ4wDxAPLw4vDy8PLw0RDhEOMA8vDxAPEA8QDhEOLw8QDxAPEA4vDzAPEA4vDxAPEA8QDxAOLw8QDxAPEA8RDi8PEA8QDjAOEA8QDxAPEA4wDhAPEQ8QDxAOEQ0wDxAPEA4RDhENEQ4RDxAOMA8QDxAOEQ8QDxAOEA8QDhEPEA4RDhENMQ8QDxAOEQ4QDxAPEA4RDxAOEQ4QDy8PEA8vDy8PLw4vDy8PEA8QDhEOEA8RDy8OEQ4ADQUAAA=='
+#    projektor:
+#      friendly_name: 'Projektor On/Off'
+#      command_on: 'JgDYAAABKJMTNxM4EhMSExQRFBITEhI4EjgTExI4EhMUNhMTEzcSExITEhMTExMSEzcSExMSEzgSOBI4EjgTOBITEjgSOBMTEgAFQwABKJMTOBI4EhMTExITERQSExI4EzgSExI4EhMTNxMTEjgSExMSEhQSExITEjgTEhMTETkSOBI4EzgSOBITEjgTNxMTEgAFQwABKJQSOBI4ExITExITEhMSExM4EjgSExI4ExITOBITEjgSExMTEhMSExITEjgTExEUEjgSOBI4EzgSOBITEjgTOBITEgANBQ=='
+#      command_off: 'JgBoAQABKJMTOBI4EhMTExITEhMSExI4EzcTExI4EhMSOBMTEjgSExI4ExITExITEjgSExMSEzgSExI4EjgTOBITEjgSOBMSEwAFQgABKZMSOBM4EhMSExITExITExI4EjgSExM3ExMSOBITEjgTExI4EhMSExMSEzgSExITEjgTExI4EjgSOBMSEzgSOBITEgAFQwABKJQSOBI4ExMSExITEhMSExM4EjgSExI4ExITOBITEjgSExM4EhMSExITEjgTExITEjgSExM3EzgSOBITEjgTNxMTEgAFQwABJ5QTOBI4EhMSExMSExMSExI4EjgTExI4EhMSOBITEzgSExI4EhMSExMTEjgSExMSEzcTExI4EjgTNxMTEjgSOBITEwAFQwABKJMTOBI4EhMTEhIUEhMSExI4EzcTExI4EhMSOBMSEzgSExI4EhMTExITETkSExMSEzgSExI4EjgTNxMTEjgSOBMSEwANBQ=='
+#    marantz:
+#      friendly_name: 'Marantz On/Off'
+#      command_on: 'JgBoABsfHB4cHjkfGx8bHxsfGx8cOxweOR8bAAuYHB8bHxsfOR4cHhwfGx8bHxs8HB45HhwAC5kbHxsfHB45HxsfGx8bHxsfHDscHjkfGwALmRsfHB4cHzgfGx8bHxweHB4cOxwfOB8bAA0F'
+#      command_off: 'JgAwABwfODw4HxweHB4cHhweHDwbHzgfHAALmBweOTs5HxsfGx8bHxweHDscHzgfGwANBQAAAAAAAAAA'
+# Broadlink RM Mini 2
+ - platform: broadlink
+   host: 192.168.3.116
+   mac: '78:0f:77:27:f5:db'
+   timeout: 15
+   switches:
+    projektor:
+      friendly_name: 'Projektor On/Off'
+      command_on: 'JgDYAAABKJMTNxM4EhMSExQRFBITEhI4EjgTExI4EhMUNhMTEzcSExITEhMTExMSEzcSExMSEzgSOBI4EjgTOBITEjgSOBMTEgAFQwABKJMTOBI4EhMTExITERQSExI4EzgSExI4EhMTNxMTEjgSExMSEhQSExITEjgTEhMTETkSOBI4EzgSOBITEjgTNxMTEgAFQwABKJQSOBI4ExITExITEhMSExM4EjgSExI4ExITOBITEjgSExMTEhMSExITEjgTExEUEjgSOBI4EzgSOBITEjgTOBITEgANBQ=='
+      command_off: 'JgBoAQABKJMTOBI4EhMTExITEhMSExI4EzcTExI4EhMSOBMTEjgSExI4ExITExITEjgSExMSEzgSExI4EjgTOBITEjgSOBMSEwAFQgABKZMSOBM4EhMSExITExITExI4EjgSExM3ExMSOBITEjgTExI4EhMSExMSEzgSExITEjgTExI4EjgSOBMSEzgSOBITEgAFQwABKJQSOBI4ExMSExITEhMSExM4EjgSExI4ExITOBITEjgSExM4EhMSExITEjgTExITEjgSExM3EzgSOBITEjgTNxMTEgAFQwABJ5QTOBI4EhMSExMSExMSExI4EjgTExI4EhMSOBITEzgSExI4EhMSExMTEjgSExMSEzcTExI4EjgTNxMTEjgSOBITEwAFQwABKJMTOBI4EhMTEhIUEhMSExI4EzcTExI4EhMSOBMSEzgSExI4EhMTExITETkSExMSEzgSExI4EjgTNxMTEjgSOBMSEwANBQ=='
+    projwlhdmi:
+      friendly_name: 'WLHDMI-box On/Off'
+      command_on: 'JgDYAAABKJQSOBMSFBIRFBMSERQUERQ3EjgSOBMSEhQTEhMSExIUERQSERQTEhMSFBEUEhM3ExITNxM3FDcSNxQ3EjgUEhM3EwAFsQABKY8WOBITFBITEhMSFBESFBM3EjgSOBMSFBITEhMSFBERFBQSExITEhMSFBEUEhE5EhMUNhI4EzgSOBI4EjgUEhM3EgAFsgABKJQTNxMTExITEhMSFBESFBM3EjgUNhQSExITEhMSFBEUEhMSExITEhEUFBIRFBI4ExISOBI5EzcTNxI4FDYUEhM3EwANBQ==Av'
+      command_off: 'JgDYAAABKZITNxQSExITEhITExMTEhM3EjgTNxQSExITEhMSFBITEhMSERQTEhIUExITEhE5ExIUNhQ3EzcTNxM3FDcTEhE5EgAFswABKZIUNxMSEhMTExEUERQRFBI4FDcTNxMSERQSFBEUExIRFBITEhQTEhITExISExI4FBIRORM3EzcUNxE5EzcTEhQ3EwAFsQABKZMTNxMSEhMTExEUExISExI4FDcTNxMSExISFBEUERQSExMTERQRFBEUExITExE5ExIRORM3FDcTNxM3EzcSFBE5EwANBQ=='
+    marantz:
+      friendly_name: 'Marantz On/Off'
+      command_on: 'JgBoABsfHB4cHjkfGx8bHxsfGx8cOxweOR8bAAuYHB8bHxsfOR4cHhwfGx8bHxs8HB45HhwAC5kbHxsfHB45HxsfGx8bHxsfHDscHjkfGwALmRsfHB4cHzgfGx8bHxweHB4cOxwfOB8bAA0F'
+      command_off: 'JgAwABwfODw4HxweHB4cHhweHDwbHzgfHAALmBweOTs5HxsfGx8bHxweHDscHzgfGwANBQAAAAAAAAAA'
+
+
+
+# Broadlink sp3 s1:
+ - platform: broadlink
+   name: 'Broadlink1'
+   host: 192.168.3.105
+   mac: '34:EA:34:BE:59:C8'
+   timeout: 15
+   friendly_name: 'Broadlink1'
+   type: sp3
+
+# Broadlink sp3 s2:
+ - platform: broadlink
+   name: 'Broadlink2'
+   host: 192.168.3.106
+   mac: '34:EA:34:BE:62:B5'
+   timeout: 15
+   friendly_name: 'Broadlink2'
+   type: sp3
+
+# Sonoff S20 MQTT
+## Cirkulationspump Radiatorer Sonoff S20-04
+ - platform: mqtt
+   name: "sonoffS20-04"
+   state_topic: "cmnd/sonoffs2004/power"
+   #state_topic: "stat/sonoffs2004"
+   command_topic: "cmnd/sonoffs2004/power"
+   #availability_topic: "stat/sonoffs2004/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+
+#Sonoff POW MQTT
+ - platform: mqtt
+   name: "sonoffpow01"
+   #state_topic: "stat/sonoffpow01/POWER"
+   state_topic: "cmnd/sonoffpow01/POWER"
+   command_topic: "cmnd/sonoffpow01/POWER"
+   #availability_topic: "tele/sonoffpow01/LWT"
+   payload_on: "on"
+   payload_off: "off"
+  # payload_available: "Online"
+ #  payload_not_available: "Offline"
+   optimistic: false
+   qos: 0
+   retain: true
+ - platform: mqtt
+   name: "sonoffpow02"
+   state_topic: "cmnd/sonoffpow02/POWER"
+   command_topic: "cmnd/sonoffpow02/POWER"
+   #availability_topic: "tele/sonoffpow02/LWT"
+   payload_on: "on"
+   payload_off: "off"
+   payload_available: "Online"
+   payload_not_available: "Offline"
+   optimistic: false
+   qos: 0
+   retain: true
+
+
+#  alarm_control_panel.home_alarm
+ - platform: template
+   switches:
+     alarm_away:
+       friendly_name: "Larm Borta"
+       value_template: "{{ is_state('alarm_control_panel.home_alarm', 'armed_away') }}"
+       turn_on:
+         service: alarm_control_panel.alarm_arm_away
+       turn_off:
+         service: alarm_control_panel.alarm_disarm  
+     alarm_home:
+       friendly_name: "Larm Hemma"
+       value_template: "{{ is_state('alarm_control_panel.home_alarm', 'armed_home') }}"
+       turn_on:
+         service: alarm_control_panel.alarm_arm_home
+       turn_off:
+         service: alarm_control_panel.alarm_disarm  
+     alarm_trig:
+       friendly_name: "Trigga Larm"
+       value_template: "{{ is_state('alarm_control_panel.home_alarm', 'alarm_trigged') }}"
+       turn_on:
+         service: alarm_control_panel.alarm_trigger
+       turn_off:
+         service: alarm_control_panel.alarm_disarm  
+

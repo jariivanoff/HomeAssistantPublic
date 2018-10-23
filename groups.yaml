@@ -1,0 +1,740 @@
+default_view:
+  view: true
+  icon: mdi:home
+  entities:
+  - group.sensors
+  - group.windows
+  - group.outdoors
+  - group.other
+  - group.kitchen 
+  - group.bedroom
+  - group.gillestuga
+  - group.vardagsrum
+  - group.volvo
+  - group.washer
+  - group.ellas
+  - group.linus
+  - group.finrum
+  - group.badrum
+  - group.toaletten
+  - group.kokshallen
+  - group.hallen
+  #- sensor.moon
+  #- sun.sun
+  #- sensor.yr_symbol
+  #- sensor.day_night
+  name: default_view
+  
+windows:
+  view: false
+  name: "F\xF6nsterbelysning"
+  entities:
+  - light.all_windows
+
+outdoors:
+  view: false
+  name: "Utomhusbelysning"
+  entities:
+  - light.outdoors
+  - light.ute_koksdorren
+  - light.ute_balkongen
+  - light.ute_stora_entren
+
+other:
+  view: false
+  name: Annat
+  entities:
+  - switch.ute_fontanen
+  - switch.skymningssensor_ute
+
+badrum:
+  view: false
+  name: Badrum
+  entities:
+  - light.badrum
+  - light.spegel
+  - light.takh
+
+toaletten:
+  view: false
+  name: Toaletten
+  entities:
+  - light.toa_1h
+  - light.toa_2h
+
+hallen:
+  view: false
+  name: "Hallen"
+  entities:
+  - light.halldoor
+  - light.hallbath
+
+kokshallen:
+  view: false
+  name: "Kökshallen"
+  entities:
+  - light.kokshall_vagg
+  - light.takhh
+
+finrum:
+  view: false
+  name: Finrummet
+  entities:
+  - light.vitrinskap
+
+ellas:
+  view: false
+  name: Ellas rum
+  entities:
+  - light.ellash
+  - light.ellas_fh
+  
+
+linus:
+  view: false
+  name: Linus rum
+  entities:
+  - light.linush
+  - light.linus_fh
+
+
+vardagsrum:
+  view: false
+  name: Vardagsrum
+  entities:
+  - light.vardagsrumt
+#  - light.tak1h
+#  - light.tak2h
+  - light.couchh
+
+kitchen:
+ view: false 
+ name: Köket
+ entities:
+  - light.tableh
+  - light.kitchenfan
+  - light.kitchensink
+  
+bedroom:
+ view: false 
+ name: Sovrum
+ entities:
+  - light.sovrumt
+  - light.sovrumfh
+#  - light.taks1h
+#  - light.taks2h
+#  - light.taks3h
+
+
+gillestuga:
+  view: false
+  name: Gillestugan
+  entities:
+#  - light.gillestugan
+  - light.uplight_fram
+  - light.uplight_bak
+  - light.trappah
+  - light.fronth
+  - light.backh
+  - llight.stereoh
+
+heat:
+  name: "V\xE4rmesystem"
+  view: true
+  entities:
+  - group.ivt
+  - group.ivt_control
+  - group.cirkulation_kamin
+  - group.cirkulation_radiator
+  - group.fan_basement
+
+
+ivt:
+  view: false
+  name: "V\xE4rmepump"
+  entities:
+  - script.ivt_settemp_18
+  - script.ivt_settemp_19
+  - script.ivt_settemp_20
+  - script.ivt_settemp_21
+  - script.ivt_settemp_22
+  - script.ivt_settemp_23
+  - script.ivt_settemp_24
+  - script.ivt_settemp_25
+  - script.ivt_settemp_26
+  - script.ivt_settemp_27
+  - script.ivt_settemp_28
+  - script.ivt_settemp_29
+  - script.ivt_settemp_30
+  - script.ivt_settemp_31
+  - script.ivt_settemp_32
+
+ivt_control:
+  view: false
+  name: "V\xE4rmepump Kontroll"
+  entities:
+  - switch.heatpump 
+  #- switch.ivt_onoff
+  #- script.ivt_on
+  #- script.ivt_off
+  - script.ivt_mode_cool
+  - script.ivt_mode_dry
+  - script.ivt_mode_ventilate
+  - script.ivt_mode_heat
+  - script.ivt_run_1hr
+  - script.ivt_fan_1
+  - script.ivt_fan_2
+  - script.ivt_fan_3
+  - script.ivt_fan_4
+
+cirkulation_radiator:
+  view: false 
+  name: "Cirkulation Radiator"
+  entities:
+  - switch.sonoffs2004
+
+cirkulation_kamin:
+  view: false 
+  name: "Cirkulation Kamin"
+  entities:
+  - switch.broadlink1
+  - sensor.broadlinkpow1
+
+fan_basement:
+  view: false
+  name: "Källarfläkt"
+  entities:
+  - script.floor_fan_basement_on
+# - script.floor_fan_basement_off
+  - script.floor_fan_basement_speed
+  - script.floor_fan_basement_swing
+ # - script.floor_fan_basement_timer
+
+
+
+envisalink:
+ view: true 
+ name: Envisalink
+ entities:
+ - alarm_control_panel.home_alarm
+ - group.envisalink_sensors
+ - group.alarm_controls
+
+alarm_controls:
+ view: false
+ name: "Larmkontroller"
+ entities:
+ #- script.alarm_home
+ #- script.alarm_away
+ #- script.alarm_trigg
+ - switch.alarm_home
+ - switch.alarm_away
+ - switch.alarm_trig
+ - script.alarm_disarm
+
+volvo:
+  name: Volvo
+  view: true
+  entities:
+  - group.volvo_sensors
+  - group.volvo_binary_sensors
+  - group.volvo_switches
+
+3dprinters:
+  name: "3D Print"
+  view: true
+  entities:
+  #- group.3DPrint
+  - sensor.215_temperature
+  - sensor.215_humidity
+  - group.3DTove
+  - group.sonoffpow01
+  - group.sonoffpow02
+  - group.3DCristin
+
+3DTove:
+  name: "Tove Octoprint"    
+  entities:
+  - sensor.tove_current_state
+  - sensor.tove_job_percentage
+  - sensor.tove_actual_tool0_temp
+  - sensor.tove_target_tool0_temp
+  - sensor.tove_actual_bed_temp
+  - sensor.tove_target_bed_temp
+  - binary_sensor.octoprint_printing
+  - binary_sensor.octoprint_printing_error
+  
+3DCristin:
+  name: "Cristin Octoprint"    
+  entities:
+  - camera.cristincam
+
+
+# Hemmabion
+hemmabio:
+  name: Hemmabion
+  view: true
+  entities:
+  - group.hemmabioprojektor
+  - group.hemmabioljud
+  - group.mediaspelare
+  - group.tv_control
+
+hemmabioljud:
+  name: Förstärkare
+  view: false
+  entities:
+  - switch.marantz
+  - script.marantz_set_bd
+  - script.marantz_set_cbl
+  - script.marantz_set_dvd
+  - script.marantz_set_mediaplayer
+
+hemmabioprojektor:
+  name: Projektor
+  view: false
+  entities:
+  - switch.projektor
+  - switch.projwlhdmi
+  - script.proj_set_wlhdmi
+  
+mediaspelare:
+  name: Mediaspelare
+  view: false
+  entities:
+  - media_player.gillestugan
+  - media_player.tvrummet_chrome
+  - media_player.kodi_libreeleclocal
+  - media_player.kodi_openeleclocal
+  - media_player.sony_bravia_tv
+  - media_player.gh_gillestugan
+  - media_player.gh_sovrum
+  - media_player.gh_vardagsrum
+  - media_player.cc_gillestugan
+  - media_player.cc_vardagsrum
+
+tv_control:
+  name: "TV kontroll"
+  view: false 
+  entities:
+  - script.tv_source_tv
+  - script.tv_source_hdmi1
+  - script.tv_source_hdmi2
+  - script.tv_source_hdmi3
+  - script.tv_source_hdmi4
+  - script.tv_volume_up
+  - script.tv_volume_down
+ # - script.tv_volume_mute
+# Hemmabion
+  
+sensors:
+  name: Sensorer
+  entities:
+  - sensor.fsm_state_badrum_rorelse
+  - sensor.fsm_state_badrum_nattljus
+  - binary_sensor.tradfri_motion_sensor
+  - binary_sensor.vpir_badrum_rorelse
+  - binary_sensor.vpir_badrum_nattljus
+  - sensor.fsm_state_visitor
+  - binary_sensor.vpir_visitor
+  - sensor.moon
+  - sun.sun
+  - sensor.yr_symbol
+  - sensor.day_night
+  - sensor.weather
+  - sensor.net_temp_ute_temperature
+  - sensor.net_temp_ute2_temperature
+  - sensor.medeltemp_markplan
+  - sensor.medeltemp_kallare
+  - sensor.medeltemp_utomhus
+  
+
+
+volvo_sensors:
+  name: Sensorer
+  view: false
+  entities:
+  - sensor.pexen_fuel_amount
+  - sensor.pexen_fuel_level
+  - sensor.pexen_range
+  - sensor.pexen_odometer
+  - device_tracker.volvo_pex254
+
+volvo_binary_sensors:
+  name: Status
+  view: false
+  entities:
+  - binary_sensor.pexen_windows
+  - binary_sensor.pexen_washer_fluid
+  - binary_sensor.pexen_service
+  - binary_sensor.pexen_doors
+  - binary_sensor.pexen_bulbs
+  - binary_sensor.pexen_brake_fluid
+  
+volvo_switches:
+  name: Kontroller
+  view: false
+  entities:
+  - lock.pexen_lock
+  - switch.pexen_heater
+
+temperatures:
+  name: Temp och Luftfukt
+  view: true
+  entities:
+  - group.temp_ute
+  - group.temp_medel_kallare
+  - group.temp_medel_markplan
+  - group.temp_medel_ute
+  - group.temp_linus
+  - group.temp_ellas
+  - group.temp_sovrum
+  - group.temp_tvrum
+  - group.temp_kok
+  - group.temp_finrum
+  - group.temp_badrum
+  - group.temp_kallare
+  - group.temp_gillestuga
+  - group.temp_tvattstuga
+  - group.temp_kylofrys
+  - group.temp_hobbyrum
+  - group.temp_grona_rummet
+  
+
+temp_ute:
+  name: Utomhus
+  view: false
+  entities:
+  - sensor.net_temp_ute_temperature
+  - sensor.net_temp_ute_humidity
+  - sensor.net_temp_ute2_temperature
+  - sensor.net_temp_ute2_humidity
+
+temp_medel_markplan:
+  name: Medeltemp Markplan
+  view: false
+  entities:
+  - sensor.medeltemp_markplan
+  - sensor.luftfukt_medel_markplan
+
+temp_medel_kallare:
+  name: Medeltemp Källare
+  view: false
+  entities:
+  - sensor.medeltemp_kallare
+  - sensor.luftfukt_medel_kallare
+
+temp_medel_ute:
+  name: Medeltemp Ute
+  view: false
+  entities:
+  - sensor.medeltemp_utomhus
+  - sensor.luftfukt_medel_utomhus
+  
+temp_linus:
+  name: Linus rum
+  view: false
+  entities:
+  - sensor.net_linus_temperature
+  - sensor.net_linus_humidity
+
+temp_ellas:
+  name: Ellas rum
+  view: false
+  entities:
+  - sensor.net_ellas_temperature
+  - sensor.net_ellas_humidity
+
+temp_sovrum:
+  name: Sovrummet
+  view: false
+  entities:
+  - sensor.net_sovrum_temperature
+  - sensor.net_sovrum_humidity
+
+temp_tvrum:
+  view: false
+  name: TV-rummet
+  entities:
+  - sensor.net_tv_rum_temperature
+  - sensor.net_tv_rum_humidity
+
+temp_kok:
+  view: false
+  name: Köket
+  entities:
+  - sensor.net_koket_temperature
+  - sensor.net_koket_humidity
+
+temp_finrum:
+  view: false
+  name: Finrummet
+  entities:
+  - sensor.net_finrum_temperature
+  - sensor.net_finrum_humidity
+
+temp_kallare:
+  view: false
+  name: Källarhall
+  entities:
+  - sensor.net_kallarhall_temperature_2
+  - sensor.net_kallarhall_humidity_2
+
+temp_gillestuga:
+  view: false
+  name: Gillestuga
+  entities:
+  - sensor.net_gillestuga_temperature
+  - sensor.net_gillestuga_humidity
+
+temp_kylofrys:
+  view: false
+  name: Frysbox
+  entities:
+  - sensor.net_frysboxen_temperature
+
+temp_tvattstuga:
+  view: false
+  name: Tvättstuga
+  entities:
+  - sensor.net_tvattstuga_temperature
+  - sensor.net_tvattstuga_humidity
+
+temp_badrum:
+  view: false
+  name: Badrummet
+  entities:
+  - sensor.net_badrum_temperature
+  - sensor.net_badrum_humidity
+
+temp_grona_rummet:
+  view: false
+  name: Gröna rummet
+  entities:
+  - sensor.net_grona_rummet_temperature
+ 
+temp_hobbyrum:
+  view: false
+  name: Badrummet
+  entities:
+  - sensor.net_hobbyrum_temperature
+  - sensor.net_hobbyrum_humidity
+
+automated:
+  name: Automation
+  view: true
+  entities:
+  - group.automation_on
+  - group.automation_off
+  - group.automation_volvo
+  - group.varme
+  
+automation_off:
+  view: no
+  name: Scheduled Off
+  entities:
+  - automation.slack_markplan_vardag_o_son
+  - automation.slack_markplan_helg
+  - automation.slack_fonsterlampor_barnens_rum
+  - automation.bf_slack_fonster_barnrum_helg
+  - automation.bv_slack_fonster_barnrum_helg
+  - automation.slack_kallarfonster
+  - automation.slack_kallarfonster_helg
+  - automation.slack_utebelysning_natt
+  - automation.slack_vitrinskap_finrum
+  - automation.slack_vitrinskap_finrum_helg
+  - automation.stang_av_fontanen
+  - automation.slack_utebelysning_rela
+
+
+automation_on:
+  view: false
+  name: Scheduled On
+  entities:
+  - automation.bf_tand_morgon
+  - automation.bv_tand_morgon
+  - automation.tand_fonsterlampor_kallare
+  - automation.tand_utebelysning_natt
+  - automation.tand_vitrinskap_finrum
+  - automation.starta_fontanen
+  - automation.tand_utebelysning_natt
+  - automation.tand_utebelysning_rela
+  - automation.bf_tand_morgon_markplan
+  - automation.bv_tand_morgon_markplan
+  - automation.bv_tand_morgon_markplan
+  - automation.labb
+
+automation_volvo:
+  view: false
+  name: Motorvärmare
+  entities:
+  - automation.starta_motorvarmare_bl
+  - automation.starta_motorvarmare_bv
+  
+system:  
+  name: system
+  view: true
+  entities:
+  - sensor.cpu_use
+  - sensor.ram_free
+  - sensor.average_load_5m
+  - sensor.disk_use_
+  - sensor.certifikat
+#  - script.backup 
+  
+varme:
+ view: false
+ name: Värme
+ entities:
+ - automation.underhallsvarme_pa_dagtid
+ - automation.underhallsvarme_pa_nattetid
+ - automation.underhallsvarme_av_dagtid
+ - automation.underhallsvarme_av_nattetid
+ - automation.sla_pa_varme_morgon_bl
+ - automation.sla_pa_varme_morgon_bv
+ - automation.sla_pa_varme_helg
+ - automation.sla_av_varme_bl
+ - automation.sla_av_varme_bv
+ 
+#3DPrint:
+# view: false
+# name: 3D Print
+# entities:
+# - switch.3DPrinter
+
+MQTTSwitch:
+ name: "MQTT SW"
+ view: true
+ entities:
+ - group.sonoffs20
+ - group.sonoffbasic
+ - group.sonoffpow01
+ - group.sonoffpow02
+
+sonoffs20:
+ view: false
+ name: "Sonoff S20"
+ entities:
+ - light.sonoffs2001
+ - light.fonster_stora_hallen
+ - light.uplight_bak
+ - light.sonoffs2004
+ - light.uplight_fram
+
+sonoffbasic:
+ view: false
+ name: "Sonoff Basic"
+ entities:
+ - light.sonoffbasic01
+ - light.sonoffbasic02
+ - light.sonoffbasic03
+
+sonoffpow01:
+ view: false
+ name: "Tove Tornado"
+ entities:
+ - switch.sonoffpow01
+ - sensor.sonoffpow01_voltage
+ - sensor.sonoffpow01_current
+ - sensor.sonoffpow01_draw
+ - sensor.sonoffpow01_today
+ - sensor.sonoffpow01_yesterday
+ - sensor.sonoffpow01_total
+
+sonoffpow02:
+ view: false
+ name: "Cristin"
+ entities:
+ - switch.sonoffpow02
+ - sensor.sonoffpow02_voltage
+ - sensor.sonoffpow02_current
+ - sensor.sonoffpow02_draw
+ - sensor.sonoffpow02_today
+ - sensor.sonoffpow02_yesterday
+ - sensor.sonoffpow02_total
+
+
+envisalink_sensors:
+ view: false
+ name: Larmsensorer
+ entities: 
+ - alarm_control_panel.home_alarm
+ - binary_sensor.dorrar
+ - binary_sensor.koksdorr
+ - binary_sensor.first_floor_motion
+ - binary_sensor.basement_motion
+ - binary_sensor.larmskapet
+
+slask:
+ view: true
+ name: Slask
+ entities: 
+ - switch.broadlink1
+ - switch.broadlink2
+ - sensor.broadlinkpow1
+ - sensor.broadlinkpow2
+ - group.hue_lights
+
+
+washer:
+  view: false
+  name: Tvättmaskin
+  entities:
+  - switch.broadlink2
+  - sensor.broadlinkpow2
+
+videosurveillance:
+  view: true 
+  name: Videoövervakning
+  entities:
+  - camera.wificam1
+  - camera.cristincam
+  - camera.denvercam
+
+#huset:
+#  view: false
+#  name: Google Huset
+#  entities:
+#  - group.windows
+#  - group.windows_basement
+#  - group.outdoors
+#  - switch.finrum_vitrinskap
+#  - light.gillestugan
+
+movietime:
+  view: false
+  name: Biodags
+  entities:
+  - switch.projektor
+  - switch.projwlhdmi
+  - switch.marantz
+  - script.marantz_set_dvd
+  - script.proj_set_wlhdmi
+
+
+alarm_home:
+  view: false
+  name: Alarm Arm Home
+  entities:
+  - script.alarm_home
+alarm_away:
+  view: false
+  name: Alarm Arm Away
+  entities:
+  - script.alarm_away
+alarm_disarm:
+  view: false
+  name: Alarm Disarm
+  entities:
+  - script.alarm_disarm
+
+hue_lights:
+  view: true 
+  name: Hue lampor
+  entities:
+  - light.gillestugan
+  - light.hue_white_lamp_1
+  - light.hue_white_lamp_2
+  - light.hue_white_lamp_1_2
+  - light.hue_white_lamp_2_2
+   

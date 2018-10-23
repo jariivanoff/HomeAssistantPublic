@@ -1,0 +1,233 @@
+#Sonoff S20 MQTT
+# SonoffS20-01
+ - platform: mqtt
+   name: "Kökshall Vägg"
+   state_topic: "cmnd/sonoffs2001/power"
+   #state_topic: "stat/sonoffs2001"
+   command_topic: "cmnd/sonoffs2001/power"
+   #availability_topic: "stat/sonoffs2001/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+# SonoffS20-02   
+ - platform: mqtt
+   name: "Fönster Stora Hallen"
+   state_topic: "cmnd/sonoffs2002/power"
+   #state_topic: "stat/sonoffs2002"
+   command_topic: "cmnd/sonoffs2002/power"
+   #availability_topic: "stat/sonoffs2002/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+# SonoffS20-03
+ - platform: mqtt
+   name: "Uplight Bak"
+   state_topic: "cmnd/sonoffs2003/power"
+   #state_topic: "stat/sonoffs2003"
+   command_topic: "cmnd/sonoffs2003/power"
+   #availability_topic: "stat/sonoffs2003/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+# SonoffS20-05
+ - platform: mqtt
+   name: "Uplight Fram"
+   state_topic: "cmnd/sonoffs2005/power"
+   #state_topic: "stat/sonoffs2005"
+   command_topic: "cmnd/sonoffs2005/power"
+   #availability_topic: "stat/sonoffs2005/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+
+
+#Sonoff BASIC MQTT
+# Sonoffbasic01
+ - platform: mqtt
+   name: "Gillestuga Fönster Bak"
+   state_topic: "cmnd/sonoffbasic01/power"
+   #state_topic: "stat/sonoffbasic01"
+   command_topic: "cmnd/sonoffbasic01/power"
+   #availability_topic: "stat/sonoffbasic01/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+# Sonoffbasic02 
+ - platform: mqtt
+   name: "Gillestuga Fönster Fram"
+   state_topic: "cmnd/sonoffbasic02/power"
+   #state_topic: "stat/sonoffbasic02"
+   command_topic: "cmnd/sonoffbasic02/power"
+   #availability_topic: "stat/sonoffbasic02/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+# Sonoffbasic 03
+ - platform: mqtt
+   name: "Vitrinskåp"
+   state_topic: "cmnd/sonoffbasic03/power"
+   #state_topic: "stat/sonoffbasic03"
+   command_topic: "cmnd/sonoffbasic03/power"
+   #availability_topic: "stat/sonoffbasic03/power"
+   payload_on: "on"
+   payload_off: "off"
+   optimistic: false
+   qos: 0
+   retain: true
+
+ - platform: template
+   lights:
+     ute_balkongen:
+       friendly_name: "Ute Balkongen"
+       turn_on:
+         service: homeassistant.turn_on
+         entity_id: switch.net_balkongen_ute
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.net_balkongen_ute
+
+     ute_stora_entren:
+       friendly_name: "Ute Stora Entrén"
+       turn_on:
+         service: homeassistant.turn_on
+         entity_id: switch.net_stora_dorren
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.net_stora_dorren
+
+     ute_koksdorren:
+       friendly_name: "Ute Köksdörren"
+       turn_on:
+         service: homeassistant.turn_on
+         entity_id:  switch.net_koksdorren_ute
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.net_koksdorren_ute
+
+ - platform: group
+   name: all_windows
+   friendly_name: "Alla Fönsterlampor"
+   entities:
+     - light.linus_fh
+     - light.kitchenf1h
+     - light.kitchenf2h
+     - light.tvrum_f1h
+     - light.tvrum_f2h
+     - light.fonster_stora_hallen
+     - light.ellas_fh
+     - light.sovrumfh
+     - light.finrum_f1h
+     - light.finrum_f2h
+     - light.gillestuga_fonster_bak
+     - light.gillestuga_fonster_fram
+     - light.tvattstugan_fh
+     - light.gula_rummet_fh
+     - light.grona_rummet_fh
+ 
+
+# Stora Hallen
+ - platform: group
+   name: halldoor
+   friendly_name: "Stora Hallen Dörr"
+   entities:
+     - light.halled1h
+     - light.halled2h
+
+ - platform: group
+   name: hallbath
+   friendly_name: "Stora Hallen Bad"
+   entities:
+     - light.halleb1h
+     - light.halleb2h
+  
+  
+# Utomhus
+ - platform: group
+   name: outdoors
+   friendly_name: "Utebelysning"
+   entities:
+     - light.ute_balkongen
+     - light.ute_stora_entren
+     - light.ute_koksdorren
+ 
+# Vardagsrum 
+ - platform: group
+   name: vardagsrumt
+   friendly_name: "Tak"
+   entities:
+     - light.tak1h
+     - light.tak2h
+
+ 
+# Sovrum
+ - platform: group
+   name: sovrumt
+   friendly_name: "Tak"
+   entities:
+     - light.taks1h
+     - light.taks2h
+     - light.taks3h
+
+# Köket 
+ - platform: group
+   name: kitchenfan
+   friendly_name: "Spisfläkt"
+   entities:
+     - light.fan1h
+     - light.fan2h
+     
+ - platform: group
+   name: kitchensink
+   friendly_name: "Diskbänk"
+   entities:
+     - light.diskbank1h
+     - light.diskbank2h
+     - light.diskbank3h
+     - light.diskbank4h
+
+ #- platform: group
+ #  name: all_house
+ #  friendly_name: "Hela Huset"
+ #  entities:
+ #    - light.all_windows
+ #    - light.tableh
+ #    - light.kitchensink
+ #    - light.kitchenfan
+ #    - light.sovrumt
+ #    - light.vardagsrum
+ #    - light.couchh
+ #    - light.outdoors
+ #    - light.hallbath
+ #    - light.halldoor
+ #    - light.gillestuga_uplight_fram
+ #    - light.gillestuga_uplight_bak
+ #    - light.badrum
+ #    - light.kokshallen
+ #    - light.takhh
+ #    - switch.finrum_vitrinskap
+ #    - light.trappah
+ #    - light.fronth
+ #    - light.backh
+ #    - light.stereoh
+ #    - light.linush
+ #    - light.ellash
+
+
+
+
+  
+
+     
+

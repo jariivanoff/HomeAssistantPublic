@@ -1,0 +1,185 @@
+ #- platform: tellstick
+# Weather Prediction and sensors
+# - platform: yr
+#   monitored_conditions: 
+#    - symbol
+ - platform: moon
+ 
+ - platform: time_date
+   display_options:
+    - 'time'
+    - 'date'
+ 
+ - platform: template
+   sensors:
+    day_night:
+       friendly_name: "Dag och Natt"
+       value_template: '{% if is_state("sun.sun", "above_horizon") %}Dag{% else %}Natt{% endif %}'
+       icon_template: '{% if is_state("sun.sun", "above_horizon") %}mdi:weather-sunny{% else %}mdi:weather-night{% endif %}'
+ 
+ - platform: cert_expiry
+   name: Certifikat
+   host: home.ivanoff.info
+ 
+ - platform: systemmonitor
+   resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+    - type: processor_use
+
+ - platform: min_max
+   type: mean
+   name: 'Medeltemp Markplan'
+   entity_ids:
+     - sensor.net_koket_temperature
+     - sensor.net_sovrum_temperature
+     - sensor.net_tv_rum_temperature
+     - sensor.net_linus_temperature
+     - sensor.net_ellas_rum_temperature
+     - sensor.net_finrum_temperature
+
+ - platform: min_max
+   type: mean
+   name: 'Luftfukt Medel Markplan'
+   entity_ids:
+     - sensor.net_koket_humidity
+     - sensor.net_sovrum_humidity
+     - sensor.net_tv_rum_humidity
+     - sensor.net_linus_humidity
+     - sensor.net_ellas_rum_humidity
+     - sensor.net_finrum_humidity
+
+ - platform: min_max
+   type: mean
+   name: 'Medeltemp Källare'
+   entity_ids:
+     - sensor.net_kallarhall_temperature
+     - sensor.net_gillestuga_temperature
+     - sensor.net_hobbyrum_temperature
+     - sensor.net_grona_rummet_temperature
+
+ - platform: min_max
+   type: mean
+   name: 'Luftfukt Medel Källare'
+   entity_ids:
+     - sensor.net_kallarhall_humidity
+     - sensor.net_gillestuga_humidity
+     - sensor.net_hobbyrum_humidity
+   #  - sensor.net_grona_rummet_humidity
+
+ - platform: min_max
+   type: mean
+   name: 'Luftfukt Medel Utomhus'
+   entity_ids:
+     - sensor.net_temp_ute2_humidity
+     - sensor.net_temp_ute_humidity
+     
+ - platform: min_max
+   type: mean
+   name: 'Medeltemp Utomhus'
+   entity_ids:
+     - sensor.net_temp_ute2_temperature
+     - sensor.net_temp_ute_temperature
+     
+ - platform: octoprint
+   name: 'Tove'
+   monitored_conditions:
+     - Current State
+     - Temperatures
+     - Job Percentage
+
+# SonOff POW 01 Tove Tornado
+ - platform: mqtt
+   name: 'SonoffPOW01 Draw'
+   state_topic: 'tele/sonoffpow01/SENSOR'
+   qos: 0
+   unit_of_measurement: 'W'
+   value_template: '{{ value_json["ENERGY"]["Power"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW01 Voltage'
+   state_topic: 'tele/sonoffpow01/SENSOR'
+   qos: 0
+   unit_of_measurement: 'V'
+   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW01 Today'
+   state_topic: 'tele/sonoffpow01/SENSOR'
+   qos: 0
+   unit_of_measurement: 'kWh'
+   value_template: '{{ value_json["ENERGY"]["Today"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW01 Current'
+   state_topic: 'tele/sonoffpow01/SENSOR'
+   qos: 0
+   unit_of_measurement: 'A'
+   value_template: '{{ value_json["ENERGY"]["Current"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW01 Yesterday'
+   state_topic: 'tele/sonoffpow01/SENSOR'
+   qos: 0
+   unit_of_measurement: 'kWh'
+   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW01 Total'
+   state_topic: 'tele/sonoffpow01/SENSOR'
+   qos: 0
+   unit_of_measurement: 'kWh'
+   value_template: '{{ value_json["ENERGY"]["Total"] }}'
+
+# SonOff POW 02 Cristen
+ - platform: mqtt
+   name: 'SonoffPOW02 Draw'
+   state_topic: 'tele/sonoffpow02/SENSOR'
+   qos: 0
+   unit_of_measurement: 'W'
+   value_template: '{{ value_json["ENERGY"]["Power"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW02 Voltage'
+   state_topic: 'tele/sonoffpow02/SENSOR'
+   qos: 0
+   unit_of_measurement: 'V'
+   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW02 Today'
+   state_topic: 'tele/sonoffpow02/SENSOR'
+   qos: 0
+   unit_of_measurement: 'kWh'
+   value_template: '{{ value_json["ENERGY"]["Today"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW02 Current'
+   state_topic: 'tele/sonoffpow02/SENSOR'
+   qos: 0
+   unit_of_measurement: 'A'
+   value_template: '{{ value_json["ENERGY"]["Current"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW02 Yesterday'
+   state_topic: 'tele/sonoffpow02/SENSOR'
+   qos: 0
+   unit_of_measurement: 'kWh'
+   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+ - platform: mqtt
+   name: 'SonoffPOW02 Total'
+   state_topic: 'tele/sonoffpow02/SENSOR'
+   qos: 0
+   unit_of_measurement: 'kWh'
+   value_template: '{{ value_json["ENERGY"]["Total"] }}'
+
+# - platform: envisalink
+#   display-options:
+
+ - platform: broadlink_power
+   name: 'BroadlinkPow1'
+   host: 192.168.3.105
+   mac: '34:EA:34:BE:59:C8'
+   
+ - platform: broadlink_power
+   name: 'BroadlinkPow2'
+   host: 192.168.3.106
+   mac: '34:EA:34:BE:62:B5'
+   scan_interval: 15
+
+ 
