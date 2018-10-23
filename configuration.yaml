@@ -1,0 +1,175 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 58.205738
+  longitude: 12.718703
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 90
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Stockholm
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+ http:
+  # api_password: !secret http_password
+
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+  ssl_profile: intermediate
+  cors_allowed_origins:
+   - https://google.com
+   - https://www.home-assistant.io
+  trusted_proxies:
+   - 127.0.0.1
+   - ::1
+  trusted_networks:
+   - 127.0.0.1
+   - ::1
+   - 192.168.1.0/24
+   - 192.168.3.0/24
+   - 172.30.33.0/24
+   - fd00::/8
+
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+  - songpal
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Purge database 
+recorder:
+  purge_interval: 1
+  purge_keep_days: 5
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+
+# Text to speech
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300  
+
+# Cloud
+# cloud:
+
+zeroconf:
+
+# Google API
+google:
+   client_id: !secret google_client_id 
+   client_secret: !secret google_client_secret 
+
+
+# Telldus, Tellstick.Net
+tellduslive:
+
+# MQTT Servern
+mqtt:
+  broker: 192.168.1.133
+  username: !secret mqtt_user
+  password: !secret mqtt_pwd
+
+# Larmet
+envisalink:
+  host: 192.168.1.168
+  panel_type: DSC
+  user_name: !secret envisalink_user
+  password: !secret envisalink_pwd
+  code: !secret envisalink_code
+  # port: 4025
+  # evl_version: 3
+  keepalive_interval: 60
+  zonedump_interval: 30
+  panic_type: Police
+  zones:
+    1:
+      name: 'Dörrar'
+      type: 'opening'
+    2:
+      name: 'Köksdörr'
+      type: 'opening'
+    3:
+      name: 'First Floor Motion'
+      type: 'motion'
+    4:
+      name: 'Basement Motion'
+      type: 'motion'
+ #   5:
+ #     name: 'Unknown'
+ #     type: 'motion'
+    6:
+      name: 'Larmskåpet'
+      type: 'opening'
+
+  partitions:
+    1:
+      name: 'Home Alarm'
+
+# Volvo On Call
+volvooncall:
+  username: !secret volvo_on_call_usr
+  password: !secret volvo_on_call_pwd 
+  name: 
+    pex254: 'Pexen'
+
+# HTML5 Push notification
+notify:
+  - name: html5
+    platform: html5
+    gcm_api_key: !secret notify_gcm_api_key
+    gcm_sender_id: !secret notify_gcm_sender_id
+
+# Octoprint 1
+octoprint:
+   host: 192.168.1.131
+   #name: 'Tove'
+   api_key: !secret octoprint_1_apikey
+   bed: true
+   number_of_tools: 1
+
+group: !include groups.yaml
+automation: !include_dir_list automations
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
+switch: !include switches.yaml
+light: !include lights.yaml
+google_assistant: !include google_assistant.yaml
+media_player: !include media_players.yaml
