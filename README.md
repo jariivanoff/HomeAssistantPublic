@@ -1,2 +1,2 @@
 # HomeAssistantPublic
-My Homeassistant hacks and automations
+My Homeassistant hacks and automations, and other useful configuration.
