@@ -1,0 +1,301 @@
+project_id: !secret google_api_project_id 
+api_key: !secret google_api_key
+expose_by_default: false
+exposed_domains:
+   - switch
+   - mediaplayer
+   - light
+   - group
+
+entity_config:
+  light.all_windows:
+    name: All Windows
+    expose: true
+    aliases:
+     - fönsterlampor
+     - window
+    room: Hela Huset
+
+#  light.entire_house:
+#    name: All Lights
+#    expose: true
+#    aliases:
+#     - entire house
+#     - alla lampor
+#    room: Hela Huset
+
+# Hela Huset
+#  group.huset:
+#    name: Hela Huset
+#    expose: true
+#    aliases:
+#    - huset
+#    - house
+#    room: Hela Huset
+
+# Badrum
+  light.takh:
+    name: Badrum taklampa
+    expose: true
+    aliases:
+     - taket
+    room: Badrummet
+
+  light.spegel:
+    name: Badrum spegel
+    expose: true
+    aliases:
+     - spegeln
+    room: Badrummet
+
+# Linus rum
+  light.linush:
+    name: Linus taklampa
+    expose: true
+    aliases:
+     - taket
+    room: Linus rum
+
+# Ellas rum
+  light.ellash:
+    name: Ellas taklampa
+    expose: true
+    aliases:
+     - taket
+    room: Ellas rum
+
+# Hallen
+  light.halldoor:
+    name: Halldoor
+    expose: true
+    aliases:
+     - lampa 1
+     - light 1
+    room: Hallen
+
+  light.hallbath:
+    name: Hallbath
+    expose: true
+    aliases:
+     - lampa 2
+     - light 2
+    room: Hallen
+
+# Utomhus
+  light.outdoors:
+    name: Utebelysning
+    expose: true
+    aliases:
+     - ute
+     - outside
+    room: Utomhus
+
+# Vardagsrum   
+  light.vardagsrumt:
+    name: Taket
+    expose: true
+    aliases:
+    - taket
+    room: Vardagsrummet
+  
+  light.couchh:
+    name: Soffan
+    expose: true
+    aliases:
+    - soffan
+    room: Vardagsrum met   
+
+  media_player.kodi_tv_rum:
+    name: Kodi TV rum
+    expose: true
+    aliases:
+    - kodi tvrum
+    - media player tv rum
+    room: Vardagsrummet
+   
+  media_player.sony_bravia_tv:
+    name: TV
+    aliases:
+    - TV
+    room: Vardagsrummet
+
+# Köket
+  light.kitchenfan:
+    name: Spisfläkten
+    expose: true
+    aliases:
+     - spisen
+     - kitchenfan
+    room: Köket
+
+  light.kitchensink:
+    name: Diskbänken
+    expose: true
+    aliases:
+     - diskbänken
+     - sink
+    room: Köket
+ 
+  light.tableh:
+    name: Matbord
+    expose: true
+    aliases:
+     - bordet
+     - table
+    room: Köket
+
+#Sovrummet
+  light.sovrum:
+    name: Tak
+    expose: true
+    aliases:
+     - sovrummet
+     - bedroom
+    room: Sovrum
+
+  light.sovrumfh:
+    name: Fönster
+    expose: true
+    aliases:
+     - fönster
+     - window
+    room: Sovrummet
+
+#Kökshallen
+  light.lilla_hallen:
+    name: Tak
+    expose: true
+    aliases:
+     - taket
+    room: Kökshallen
+
+  light.kokshall_vagg:
+    name: Vägg
+    expose: true
+    aliases:
+     - väggen
+    room: Kökshallen
+
+# Finrum
+  light.vitrinskap:
+    name: Vitrinskåp Finrum
+    expose: true
+    aliases:
+     - Vitrinskåpet
+    room: Finrummet
+
+
+ 
+  switch.heatpump:
+    name: Värmepumpen
+    expose: true
+    aliases:
+    - värmen
+    - heat
+    room: Hela Huset
+
+
+  switch.alarm_away:
+    name: Larm Borta
+    expose: true
+    aliases:
+    - larm borta
+    - alarm away
+    room: Hela Huset
+    
+  switch.alarm_home:
+    name: Larm Hemma
+    expose: true
+    aliases:
+    - larm hemma
+    - alarm home
+    room: Hela Huset
+
+  switch.alarm_trig:
+    name: Trigga Larm 
+    expose: true
+    aliases:
+    - trigga larm 
+    - alarm trigg
+    room: Hela Huset
+    
+  script.alarm_disarm:
+    name: Larm Av
+    expose: true
+    aliases:
+    - larma av
+    - alarm disarm
+    room: Hela Huset
+
+# Gillestuga
+  light.fronth:
+    name: Tak fram
+    expose: true
+    aliases:
+    - fram
+    - front
+    room: Gillestugan
+  
+  light.backh:
+    name: Tak bak
+    expose: true
+    aliases:
+    - bak
+    - back
+    room: Gillestugan
+  
+  light.stereoh:
+    name: Stereon
+    expose: true
+    aliases:
+    - stereo
+    room: Gillestugan
+   
+  light.uplight_fram:
+    name: Uplight Front
+    expose: true
+    aliases:
+    - lampa fram
+    - light front
+    room: Gillestugan
+
+  light.uplight_bak:
+    name: Uplight Back
+    expose: true
+    aliases:
+    - lampa bak
+    - light back
+    room: Gillestugan
+
+  light.skrivbord:
+    name: Skrivbordet
+    expose: true
+    aliases:
+    - skrivbordet
+    - desk
+    room: Gillestugan
+
+  group.movietime:
+    name: Filmdags
+    expose: true
+    aliases:
+    - filmtime
+    - movietime
+    room: Gillestugan
+
+  media_player.kodi_gillestuga:
+    name: Kodi Gillestuga
+    expose: true
+    aliases:
+    - kodi 
+    - mediaplayer 
+    room: Gillestugan
+
+# Bilen
+  switch.pexen_heater:
+    name: Motorvärmare
+    expose: true
+    aliases:
+    - motorvärmare
+    - car heater
+    room: Bilen 
