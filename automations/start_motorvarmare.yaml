@@ -1,0 +1,38 @@
+alias: "Starta motorvärmare"
+#alias: "Starta motorvärmare BF"
+initial_state: true
+trigger:
+  platform: template
+  value_template: >
+    {{ is_state('sensor.time',
+       '05:30' if is_state('calendar.barnvecka', 'off') else '06:15') }}
+
+ # platform: time
+ # at: "05:30:00"
+  #at: "{% if is_state('calender.barnvecka', 'off') %}05:30:00{% else %}06:10:00{% endif %}"
+condition:
+  condition: and
+  conditions:
+  # - condition: state
+  #   entity_id: calendar.barnvecka
+  #   state: 'off'
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+   - condition: numeric_state
+     entity_id: sensor.medeltemp_utomhus
+     below: '10'
+   - condition: time
+     weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+   - service: switch.turn_on
+     entity_id: 
+      - switch.pexen_heater
+   - service: notify.html5
+     data_template:
+       message: "Motorvärmaren startad"

@@ -1,0 +1,17 @@
+alias: "Turn on Kökshall light "
+initial_state: true
+trigger:
+  platform: state
+  entity_id: binary_sensor.presence_26
+  to: 'on'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.lightlevel_25
+    below: 30
+action:
+  service: homeassistant.turn_on
+  entity_id:  light.takhh
+  data_template:
+    transition: 2
+    brightness_pct: >
+       {% if (now().hour >= 00) and (now().hour <= 05) %}10{% else %}100{% endif %}

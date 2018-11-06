@@ -1,0 +1,35 @@
+alias: "Tänd Morgon Vardag"
+initial_state: false
+trigger:
+  platform: template
+  value_template: >
+    {{ is_state('sensor.time',
+       '05:15' if is_state('calendar.barnvecka', 'off') else '05:50') }}
+#  platform: template
+#  value_template: >
+#    {{ is_state('calendar.barnvecka', 'off') and is_state('sensor.time', '05:15') or
+#       not is_state('calendar.barnvecka', 'off') and is_state('sensor.time', '05:50') }}
+
+condition:
+  condition: and
+  conditions:
+   - condition: state
+     entity_id: calendar.ledighet
+     state: 'off'
+#   - condition: state
+#     entity_id: calendar.barnvecka
+#     state: 'off'
+   - condition: time
+     weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri
+action: 
+  service: light.turn_on
+  entity_id: 
+    - light.all_windows
+  data:
+     transition: 60
+     brightness_pct: 60 

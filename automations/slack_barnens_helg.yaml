@@ -1,0 +1,25 @@
+alias: "Släck fönster barnrum helg"
+initial_state: true
+trigger:
+  platform: template
+  value_template: >
+    {{ is_state('sensor.time',
+       '00:59' if is_state('calendar.barnvecka', 'off') else '22:45') }}
+#  platform: time
+#  at: "00:59:30"
+#  at: "{% if is_state('calender.barnvecka', 'off') %}00:59:30{% else %}22:45:00{% endif %}"
+condition:
+  condition: and
+  conditions:
+#   - condition: state
+#     entity_id: calendar.barnvecka
+#     state: 'off'
+   - condition: time
+     weekday:
+      - fri
+      - sat
+action:
+  service: light.turn_off
+  entity_id: 
+   - light.linus_fh
+   - light.ellas_fh
