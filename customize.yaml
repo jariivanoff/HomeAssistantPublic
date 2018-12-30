@@ -189,47 +189,8 @@
   friendly_name: Värmare 
 
 
- #switch.kokshallen:
- # assumed_state: false
  switch.ute_koksdorren:
   assumed_state: false
- switch.ute_stora_entren:
-  assumed_state: false
- switch.ute_balkongen:
-  assumed_state: false
-
-
- #switch.finrum_vitrinskap:
- # assumed_state: false
-
- #light.fonster_stora_koksfonstret:
- # assumed_state: false 
- #light.fonster_finrum:
- # assumed_state: false
- #light.tv_rummet_fonster:
- # assumed_state: false
-
- #light.fonster_linus:
- # assumed_state: false
- #light.fonster_sovrum:
- # assumed_state: false
-
- #light.fonster_stora_hallen:
- # assumed_state: false
-
- #light.gillestuga_fonster_bak:
- # assumed_state: false
- #light.gillestuga_lampa_stereobank:
- # assumed_state: false
- #light.gillestuga_uplight_fram:
- # assumed_state: false
- #light.gillestuga_uplight_bak:
- # assumed_state: false
-
-# light.kallare_gula_rummet:
-#  assumed_state: false
-# light.finrum_vitrinskap:
-#  assumed_state: false
 
  media_player.gillestugan_chrome:
   friendly_name: Chromecast Gillestugan
@@ -412,6 +373,11 @@
   friendly_name: "Tak 2"
  light.taks3h:
   friendly_name: "Tak 3"
+
+
+# Hemmabion
+ switch.hemmabion_off:
+   assumed_state: on
 
 
  

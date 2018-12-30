@@ -19,6 +19,8 @@ default_view:
   - group.toaletten
   - group.kokshallen
   - group.hallen
+  - group.kallarhallen
+  - group.tvattstugan
   #- sensor.moon
   #- sun.sun
   #- sensor.yr_symbol
@@ -40,6 +42,18 @@ outdoors:
   - light.ute_balkongen
   - light.ute_stora_entren
 
+tvattstugan:
+  view: false
+  name: Tvättstuga
+  entities:
+  - light.tvattstuga
+
+kallarhallen:
+  view: false
+  name: Källarhallen
+  entities:
+  - light.kallarhall
+
 other:
   view: false
   name: Annat
@@ -51,9 +65,9 @@ badrum:
   view: false
   name: Badrum
   entities:
-  - light.badrum
+  #- light.badrum
   - light.spegel
-  - light.takh
+  - light.badrumstak
 
 toaletten:
   view: false
@@ -68,6 +82,8 @@ hallen:
   entities:
   - light.halldoor
   - light.hallbath
+  - light.stora_hallen_f1
+  - light.stora_hallen_f2
 
 kokshallen:
   view: false
@@ -136,7 +152,8 @@ gillestuga:
   - light.trappah
   - light.fronth
   - light.backh
-  - llight.stereoh
+  - light.stereoh
+  - light.skrivbord
 
 heat:
   name: "V\xE4rmesystem"
@@ -147,6 +164,13 @@ heat:
   - group.cirkulation_kamin
   - group.cirkulation_radiator
   - group.fan_basement
+
+zm:
+  name: "Zoneminder"
+  view: true
+  entities:
+    - camera.denvercam
+
 
 
 ivt:
@@ -303,14 +327,18 @@ mediaspelare:
   view: false
   entities:
   - media_player.gillestugan
-  - media_player.tvrummet_chrome
+  - media_player.marantz
+  - media_player.cc_gillestugan
+  - media_player.ca_gillestugan
+  - media_player.chromecastaudio2922
+  - media_player.gh_gillestugan
   - media_player.kodi_libreeleclocal
   - media_player.kodi_openeleclocal
   - media_player.sony_bravia_tv
-  - media_player.gh_gillestugan
+  - media_player.tvrummet_chrome
   - media_player.gh_sovrum
   - media_player.gh_vardagsrum
-  - media_player.cc_gillestugan
+ 
   - media_player.cc_vardagsrum
 
 tv_control:
@@ -330,13 +358,11 @@ tv_control:
 sensors:
   name: Sensorer
   entities:
-  - sensor.fsm_state_badrum_rorelse
-  - sensor.fsm_state_badrum_nattljus
   - binary_sensor.tradfri_motion_sensor
-  - binary_sensor.vpir_badrum_rorelse
-  - binary_sensor.vpir_badrum_nattljus
-  - sensor.fsm_state_visitor
-  - binary_sensor.vpir_visitor
+  - binary_sensor.presence_26
+  - sensor.lightlevel_25
+  - binary_sensor.presence_29
+  - sensor.lightlevel_28
   - sensor.moon
   - sun.sun
   - sensor.yr_symbol
@@ -347,6 +373,8 @@ sensors:
   - sensor.medeltemp_markplan
   - sensor.medeltemp_kallare
   - sensor.medeltemp_utomhus
+  - sensor.hue_light
+  - sensor.hue_temp
   
 
 
@@ -399,7 +427,7 @@ temperatures:
   - group.temp_kylofrys
   - group.temp_hobbyrum
   - group.temp_grona_rummet
-  
+  - group.temp_kallartrappa
 
 temp_ute:
   name: Utomhus
@@ -409,7 +437,15 @@ temp_ute:
   - sensor.net_temp_ute_humidity
   - sensor.net_temp_ute2_temperature
   - sensor.net_temp_ute2_humidity
+  - sensor.net_grona_rummet_ventil_temperature
 
+temp_kallatrappa:
+  name: Källartrappan
+  view: false
+  entities:
+  - sensor.hue_temp
+  - sensor.hue_light
+  
 temp_medel_markplan:
   name: Medeltemp Markplan
   view: false
@@ -512,6 +548,7 @@ temp_grona_rummet:
   name: Gröna rummet
   entities:
   - sensor.net_grona_rummet_temperature
+  - sensor.net_grona_rummet_humidity
  
 temp_hobbyrum:
   view: false
@@ -683,13 +720,13 @@ washer:
   - switch.broadlink2
   - sensor.broadlinkpow2
 
-videosurveillance:
-  view: true 
-  name: Videoövervakning
-  entities:
-  - camera.wificam1
-  - camera.cristincam
-  - camera.denvercam
+#videosurveillance:
+#  view: true 
+#  name: Videoövervakning
+#  entities:
+#  - camera.wificam1
+#  - camera.cristincam
+#  - camera.denvercam
 
 #huset:
 #  view: false

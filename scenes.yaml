@@ -1,0 +1,12 @@
+- name: Badrum ner
+  entities:
+     light.spegel:
+        state: on
+        transition: 2
+        brightness_pct: 5
+- name: Badrum ner natt
+  entities:
+     light.spegel:
+        state: on
+        transition: 2
+        brightness_pct: 3

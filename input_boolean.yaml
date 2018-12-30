@@ -1,0 +1,24 @@
+  filmdags:
+    name: Filmdags
+    initial: off
+    icon: mdi:film-reel
+
+  netflix:
+    name: Netflix
+    initial: off
+    icon: mdi:netflix
+
+  spotify:
+    name: Spotify
+    initial: off
+    icon: mdi:music-note
+
+  hemmabio_off:
+    name: "Hemmabio Av"
+    initial: On
+    icon: mdi:film-reel
+
+  fake_heater:
+    name: Fake Heater
+    icon: mdi:toggle-switch-off
+    initial: off

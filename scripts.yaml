@@ -197,6 +197,7 @@
           packet: 
             - 'JgDWAHs+DxAPLw8RDi8OEQ8vDxAOLw8QDy8OEQ4wDy8OEQ0wDxAPLw4vDy8OMQ4QDxAOMA8vDhAPEA8QDhEPLw4RDxAPEA4wDhAPEA4RDxAPEA4RDhAPLxAQDhEOEA8vDy8OEQ4QDxAPLw8QDhIOLw8vDi8PEA8QDy8OEQ4QDzAPEA4RDhAPEA8QDxAPLw4QDxAPEA8QDxAOEQ8QDxAPEA4RDhEOLw8vDxAOLw4RDxEPEA4RDhAOEQ8QDxAPEA4vDy8PMA4vDy8PEA4RDhAPLw8vDhEOEA4ADQUAAA==A'
 
+# Golvfläkt källartrappa
   floor_fan_basement_on:
     alias: 'Fläkt Källartrappa AV/PÅ'
     sequence:
@@ -218,8 +219,7 @@
       - service: switch.broadlink_send_packet_192_168_3_103
         data:
           packet: 
-            - 'JgDyACgPKQ4PKCgQJxAMKwwrDikMKw4pDikq9ygPKA8NKioNKA8OKQ0qDioOKQ4pDiko+CgPKQ8OKScQKA8MKwwrDikOKQ4qDSkp+CkOKA8NKikOKQ4NKg0qDykOKQwrDikp9SwNKA8OKSkPKQ4MKwwrDikOKQwrDiko+CoOKA8NKigPKQ4OKQ4pDikOKQ4qDCsn+SkOKA8MKykOKBANKg4pDCsMKw0qDikq9ioOJxANKigPKQ4OKQ4pDSoNKg0rDiko+CgPKg0NKikPJxAOKQ4pDCsMKw4pDikq9ycQKQ4OKSkOKQ4NKg4pDSsOKQ4pDikoAA0FAAAAAAAA
-'
+            - 'JgDyACgPKQ4PKCgQJxAMKwwrDikMKw4pDikq9ygPKA8NKioNKA8OKQ0qDioOKQ4pDiko+CgPKQ8OKScQKA8MKwwrDikOKQ4qDSkp+CkOKA8NKikOKQ4NKg0qDykOKQwrDikp9SwNKA8OKSkPKQ4MKwwrDikOKQwrDiko+CoOKA8NKigPKQ4OKQ4pDikOKQ4qDCsn+SkOKA8MKykOKBANKg4pDCsMKw0qDikq9ioOJxANKigPKQ4OKQ4pDSoNKg0rDiko+CgPKg0NKikPJxAOKQ4pDCsMKw4pDikq9ycQKQ4OKSkOKQ4NKg4pDSsOKQ4pDikoAA0FAAAAAAAA'
   floor_fan_basement_swing:
     alias: 'Fläkt Källartrappa Swing'
     sequence:
@@ -234,7 +234,6 @@
  #       data:
  #         packet: 
  #           - 'JgAEASkOKQ8NKigPKA8NKg0qKQ4NKg4qDSoNAAETKQ4pDg0qKQ8oDw0qDSopDg0qDSoNKg4AARMoDykODSopDikODSoOKigPDSoNKg0qDQABEykPKA8NKigPKQ4NKg0qKQ4OKg0qDSoNAAETKQ4pDg4pKQ8oDw4pDSopDg0qDSoOKg0AARMoDykODSopDikPDSoNKigPDSoNKg0qDQABFCgPKQ4NKikOKQ4OKQ4qKA8NKg0qDSoNAAETKQ8oDw0qKQ4pDg0qDSopDw0qDSoNKg0AARMpDikPDSooDykODSoNKikODikOKg0qDQABEykOKQ4OKSkPKA8NKg0qKQ4NKg0qDSoOAA0FAAAAAA=='
-
 
 
 
@@ -263,8 +262,8 @@
           packet: 
             - 'JgBIABweHB8bHzkeGx8cHhyXGx8bHxsfHB4cHhweHB8bPDk7OQAJwxwfGx8bHzgfHB4cHhyXGx8bHxweHB4cHhweHR4bPDk7OQANBQ=='
          
-  marantz_set_mediaplayer:
-    alias: 'Input MediaPlayer'
+  marantz_set_media_player:
+    alias: 'Input media_player'
     sequence:
       - service: switch.broadlink_send_packet_192_168_3_116
         data:
@@ -278,85 +277,112 @@
         data:
           packet: 
             - 'JgA0ABsfOB8cHhw7HB45PBsfGx8cHhwfGx8bAAt8Gx85HhweHDscHzg8Gx8cHhweHB8bHxsADQUAAAAA'
+# Sony BDP-S5200
+  sony_bluray_eject:
+    alias: 'BD Eject'
+    sequence:
+      - service: switch.broadlink_send_packet_192_168_3_116
+        data:
+          packet: 
+            - 'JgBoAk8UExQnFCcUExUnFBMUFBMTFScUFBMoEycUExUnFBMUExUTFCgTKBMnAAGbTxQUEygTJxQUFCcUExQUFBIVJxQTFCgUJxQTFCcUExUTFBMUKBMoFCcAAZtPExMVJxQnFBQTJxQUFBMUExUnFBMUKBMnFBQUJxQUExMVExQnFCgTKAABmk8UExQoEygTFBQnFBQTFBQTFCcUExUnFCcUExQnFBMVExQUEygUJxQnAAGbThQUFCcUJxQTFCcUExUTFBQTKBMTFSYVJxQTFCgTExUTFBMVJxQnFCcAAZtPFBIVJxQnFBMUKBQTFBMUExUnFBMUKBMoExQUJhUTFBQUExQoEygTKAABm04UFBMoFCcUExQnFBQUExQTFCgTFBQnFCcUFBMoExQUExQTFSYVJxQnAAGbTxQTFCcUJxQTFSYVEhUTFBQUJxQTFCgTKBQSFScUFBMUFBQTKBMoEygAAZtOFBMVJxQnFBMUKBMTFRIVFBMoExMVJxQnFBQTKBQTFBQTExUnFCYVJwABm08UExQoEygTExUnFBMUExUTFCcUExUnFCcUExQoExQUExQTFSYVJhUnAAGbTxMTFSYVJxQTFScUEhUTFBQUJxQTFCcUKBMUFCcUExQTFRMUKBMoEygAAZtOFBMVJxQnFBMUKBMTFRMUExQoFBIVJxQnFBQUJxQSFRQTExUnFCcUJwABm08UExQnFCgTFBQnFBMUExUTFCcUExQnFCgUExQnFBMVExQTFCcUKBMnAAGcThQTFScUJxQTFCcUExUSFRQTJxQTFScUJxQTFCgUEhUUExMVJxQoEycADQU='
+  sony_bluray_stop:
+    alias: 'BD Stop'
+    sequence:
+      - service: switch.broadlink_send_packet_192_168_3_116
+        data:
+          packet: 
+            - 'JgAMAQoABjVOFBQUEhUUEygTJxUSFRMUFBQmFRMUJxQoExMVJxQTFBQUEhUnFCcUJwABr08TExUTFBQUJxQnFBMUFBMUFCcUFBMoEygTFBQnFBQTExUTFCcUKBMoAAGuThUTFBQTExUnFCcUFBMTFRIVJxQTFScUJhUSFScUExUSFRQTKBMoEygAAa5PFBMUExUTFCcUJxQUFBMUFBMoExMVJhUnFBQTJxQTFRMUFBQnFCcUJwABrk8UExQTFRQTKBMoExQUFBMUFCcUExQnFCgTFBQnFBMUExUTFCcUJxQnAAGmVxQTFRMUExQoFCcUExQTFBQUJxQTFCgTKBMTFScUFBMTFRMUJxQnFCgADQUAAAAAAAAAAAAAAAA='
+  sony_bluray_play:
+    alias: 'BD Play'
+    sequence:
+      - service: switch.broadlink_send_packet_192_168_3_116
+        data:
+          packet: 
+            - 'JgAgAAoAAnYJAAJ4CQACdwoAB3gJAAT3CQAJ+QUAB3sIAA0FAAAAAAAAAAA='
+  sony_bluray_pause:
+    alias: 'BD Pause'
+    sequence:
+      - service: switch.broadlink_send_packet_192_168_3_116
+        data:
+          packet: 
+            - 'JgDcAE8UJhUTFBQUJxQmFRMUFBQSFScUExQoEygUExQmFRMUFBQTFCgTKBMoAAGbThQnFBMUFBQnFCcUExQTFRMUJxQTFSYVJxQTFCcUExUTFBQTKBMoFCcAAZtOFCcUFBQSFScUJxQTFBQUExQoExQUJxQnFBMUJxQUFBIVExQoEygUJgABnE4UJxQTFRMUJxQnFBQTExUUEygTFBQnFCcUFBMnFBQUExQTFScUJxQnAAGZURMoExQUExQnFCgTFBQTFBMUKBQSFScUJxQTFCgUExQTFBQUJxQnFCcADQUAAAAAAAAAAAAAAAA='
 
 # TV kontroller
   tv_source_hdmi1:
     alias: "Input Mediaspelare"
     sequence:
-     - service: mediaplayer.select_source
+     - service: media_player.select_source
        data:
-        entity_id: mediaplayer.sony_bravia_tv
+        entity_id: media_player.sony_bravia_tv
         source: hdmi1
   tv_source_hdmi2:
     alias: "Input BluRay"
     sequence:
-     - service: mediaplayer.select_source
+     - service: media_player.select_source
        data:
-        entity_id: mediaplayer.sony_bravia_tv
+        entity_id: media_player.sony_bravia_tv
         source: hdmi2
   tv_source_hdmi3:
     alias: "Input ChromeCast"
     sequence:
-     - service: mediaplayer.select_source
+     - service: media_player.select_source
        data:
-        entity_id: mediaplayer.sony_bravia_tv
+        entity_id: media_player.sony_bravia_tv
         source: hdmi3
   tv_source_hdmi4:
     alias: "Input Xbox360"
     sequence:
-     - service: mediaplayer.select_source
+     - service: media_player.select_source
        data:
-        entity_id: mediaplayer.sony_bravia_tv
+        entity_id: media_player.sony_bravia_tv
         source: hdmi4
   tv_source_tv:
     alias: "TV"
     sequence:
-     - service: mediaplayer.select_source
+     - service: media_player.select_source
        data:
-        entity_id: mediaplayer.sony_bravia_tv
+        entity_id: media_player.sony_bravia_tv
         source: tv
   tv_volume_up:
     alias: "Volym upp"
     sequence:
-     - service: mediaplayer.volume_up
+     - service: media_player.volume_up
        data:
-        entity_id: mediaplayer.sony_bravia_tv
+        entity_id: media_player.sony_bravia_tv
   tv_volume_down:
     alias: "Volym ner"
     sequence:
-     - service: mediaplayer.volume_down
+     - service: media_player.volume_down
        data:
-        entity_id: mediaplayer.sony_bravia_tv
- # tv_volume_mute:
- #   alias: "Mute"
- #   sequence:
- #    - service: mediaplayer.volume_mute
- #      data:
- #       entity_id: mediaplayer.sony_bravia_tv
- #       is_volume_muted: true
-
-
-  #tv_volume_15:
-  #  alias: 'TV Volume 15'
-  #  sequence:
-  #    - service: mediaplayer.volume_set
-  #      data:
-  #       entity_id: mediaplayer.sony_bravia_tv
-  #       volume_level: 15
-  #tv_volume_10:
-  #  alias: 'TV Volume 10'
-  #  sequence:
-  #    - service: mediaplayer.volume_set
-  #      data:
-  #       entity_id: mediaplayer.sony_bravia_tv
-  #       volume_level: 10
-  #tv_volume_8:
-  #  alias: 'TV Volume 8'
-  #  sequence:
-  #    - service: mediaplayer.volume_set
-  #      data:
-  #       entity_id: mediaplayer.sony_bravia_tv
-  #       volume_level: 8
+        entity_id: media_player.sony_bravia_tv
+  tv_volume_mute:
+    alias: "Mute"
+    sequence:
+     - service: media_player.volume_mute
+       data:
+        entity_id: media_player.sony_bravia_tv
+        is_volume_muted: true
+  tv_volume_15:
+    alias: 'TV Volume 15'
+    sequence:
+      - service: media_player.volume_set
+        data:
+         entity_id: media_player.sony_bravia_tv
+         volume_level: 15
+  tv_volume_10:
+    alias: 'TV Volume 10'
+    sequence:
+      - service: media_player.volume_set
+        data:
+         entity_id: media_player.sony_bravia_tv
+         volume_level: 10
+  tv_volume_8:
+    alias: 'TV Volume 8'
+    sequence:
+      - service: media_player.volume_set
+        data:
+         entity_id: media_player.sony_bravia_tv
+         volume_level: 8
 
 
 

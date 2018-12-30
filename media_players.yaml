@@ -1,3 +1,14 @@
 # TV rummet TV
  - platform: braviatv
    host: 192.168.1.140
+
+ - platform: denonavr
+   host: 192.168.1.141
+   name: Marantz
+   show_all_sources: false
+   timeout: 30
+ #  zones:
+ #    - zone: Main Z0ne
+ #      name: Main
+ #    - zone: Zone2 
+ #      name: Other

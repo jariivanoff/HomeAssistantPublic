@@ -1,7 +1,7 @@
 #Sonoff S20 MQTT
 # SonoffS20-01
  - platform: mqtt
-   name: "Kökshall Vägg"
+   name: "Skrivbord"
    state_topic: "cmnd/sonoffs2001/power"
    #state_topic: "stat/sonoffs2001"
    command_topic: "cmnd/sonoffs2001/power"
@@ -13,7 +13,7 @@
    retain: true
 # SonoffS20-02   
  - platform: mqtt
-   name: "Fönster Stora Hallen"
+   name: "SonoffS2002"
    state_topic: "cmnd/sonoffs2002/power"
    #state_topic: "stat/sonoffs2002"
    command_topic: "cmnd/sonoffs2002/power"
@@ -89,24 +89,6 @@
 
  - platform: template
    lights:
-     ute_balkongen:
-       friendly_name: "Ute Balkongen"
-       turn_on:
-         service: homeassistant.turn_on
-         entity_id: switch.net_balkongen_ute
-       turn_off:
-          service: homeassistant.turn_off
-          entity_id: switch.net_balkongen_ute
-
-     ute_stora_entren:
-       friendly_name: "Ute Stora Entrén"
-       turn_on:
-         service: homeassistant.turn_on
-         entity_id: switch.net_stora_dorren
-       turn_off:
-          service: homeassistant.turn_off
-          entity_id: switch.net_stora_dorren
-
      ute_koksdorren:
        friendly_name: "Ute Köksdörren"
        turn_on:
@@ -126,6 +108,8 @@
      - light.tvrum_f1h
      - light.tvrum_f2h
      - light.fonster_stora_hallen
+     #- light.stora_hallen_f1
+     #- light.stora_hallen_f2
      - light.ellas_fh
      - light.sovrumfh
      - light.finrum_f1h
@@ -151,7 +135,21 @@
    entities:
      - light.halleb1h
      - light.halleb2h
-  
+ 
+ - platform: group
+   name: "Fönster Stora Hallen"
+   friendly_name: "Fönster Stora Hallen"
+   entities:
+     - light.stora_hallen_f1
+     - light.stora_hallen_f2
+
+# Kökshall Vägg
+ - platform: group
+   name: kokshall_vagg
+   friendly_name: "Kökshall vvägg"
+   entities:
+     - light.kokshall_vagg_1
+     - light.kokshall_vagg_2 
   
 # Utomhus
  - platform: group
@@ -161,7 +159,18 @@
      - light.ute_balkongen
      - light.ute_stora_entren
      - light.ute_koksdorren
+
+
+# Ute Stora Entrén
+ - platform: group
+   name: ute_stora_entren
+   friendly_name: "Stora Dörren"
+   entities:
+     - light.stora_entren_1
+     - light.stora_entren_2
+     
  
+
 # Vardagsrum 
  - platform: group
    name: vardagsrumt
@@ -170,7 +179,22 @@
      - light.tak1h
      - light.tak2h
 
- 
+# Tvättstuga
+ - platform: group
+   name: tvattstuga
+   friendly_name: "Tvättstuga"
+   entities:
+     - light.tvattstuga1
+     - light.tvattstuga2
+
+# Källarhall
+ - platform: group
+   name: kallarhall
+   friendly_name: "Källarhall"
+   entities:
+     - light.kallarhall1
+     - light.kallarhall2
+
 # Sovrum
  - platform: group
    name: sovrumt

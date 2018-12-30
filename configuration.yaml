@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
+  latitude: !secret latitude 
+  longitude: !secret longitude 
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 90
   # metric for Metric, imperial for Imperial
@@ -15,6 +15,7 @@ homeassistant:
 
 # Show links to resources in log and frontend
 #introduction:
+
 
 # Enables the frontend
 frontend:
@@ -28,7 +29,7 @@ config:
 
   ip_ban_enabled: True
   login_attempts_threshold: 3
-  ssl_profile: intermediate
+#  ssl_profile: intermediate
   cors_allowed_origins:
    - https://google.com
    - https://www.home-assistant.io
@@ -60,6 +61,26 @@ discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
+
+# InfluxDB
+influxdb:
+  host: 192.168.1.122
+  port: 8086
+  database: homeassistant
+  username: !secret influxuser 
+  password: !secret influxpwd 
+  include:
+    entities:
+      - sensor.lightlevel_25
+      - sensor.lightlevel_28
+      - sensor.hue_light
+      - sensor.luftfukt_medel_markplan
+      - sensor.luftfukt_medel_kallare
+      - sensor.luftfukt_medel_utomhus
+      - sensor.medeltemp_markplan
+      - sensor.medeltemp_kallare
+      - sensor.medeltemp_utomhus
+  
 
 # Purge database 
 recorder:
@@ -164,6 +185,24 @@ octoprint:
    bed: true
    number_of_tools: 1
 
+# Unifi presence
+device_tracker:
+  - platform: unifi
+    host: 192.168.1.117
+    port: 8443
+    site_id: default 
+    verify_ssl: false
+    username: !secret unifiuser
+    password: !secret unifipassword
+    #ssid_filter:
+    #  - !secret ssidlan 'psychadelic'
+    #  - !secret ssidiot 'psychohome'
+
+zoneminder:
+  host: zoneminder.federation.loc
+  username: !secret zmuser
+  password: !secret zmpwd
+
 group: !include groups.yaml
 automation: !include_dir_list automations
 script: !include scripts.yaml
@@ -173,3 +212,7 @@ switch: !include switches.yaml
 light: !include lights.yaml
 google_assistant: !include google_assistant.yaml
 media_player: !include media_players.yaml
+input_boolean: !include input_boolean.yaml
+climate: !include climate.yaml
+camera: !include camera.yaml
+scene: !include scenes.yaml

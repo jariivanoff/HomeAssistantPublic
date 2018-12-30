@@ -1,0 +1,20 @@
+ - platform: generic_thermostat
+   name: Markplan
+   heater: input_boolean.fake_heater
+   target_sensor: sensor.medeltemp_markplan
+   initial_operation_mode: "off"
+   target_temp: 25
+
+ - platform: generic_thermostat  
+   name: Källare
+   heater: input_boolean.fake_heater
+   target_sensor: sensor.medeltemp_kallare
+   initial_operation_mode: "off"
+   target_temp: 25
+
+ - platform: generic_thermostat 
+   name: Utomhus
+   heater: input_boolean.fake_heater
+   target_sensor: sensor.medeltemp_utomhus
+   initial_operation_mode: "off"
+   target_temp: 25

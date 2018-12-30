@@ -16,6 +16,7 @@
 #      friendly_name: 'Marantz On/Off'
 #      command_on: 'JgBoABsfHB4cHjkfGx8bHxsfGx8cOxweOR8bAAuYHB8bHxsfOR4cHhwfGx8bHxs8HB45HhwAC5kbHxsfHB45HxsfGx8bHxsfHDscHjkfGwALmRsfHB4cHzgfGx8bHxweHB4cOxwfOB8bAA0F'
 #      command_off: 'JgAwABwfODw4HxweHB4cHhweHDwbHzgfHAALmBweOTs5HxsfGx8bHxweHDscHzgfGwANBQAAAAAAAAAA'
+
 # Broadlink RM Mini 2
  - platform: broadlink
    host: 192.168.3.116
@@ -30,10 +31,15 @@
       friendly_name: 'WLHDMI-box On/Off'
       command_on: 'JgDYAAABKJQSOBMSFBIRFBMSERQUERQ3EjgSOBMSEhQTEhMSExIUERQSERQTEhMSFBEUEhM3ExITNxM3FDcSNxQ3EjgUEhM3EwAFsQABKY8WOBITFBITEhMSFBESFBM3EjgSOBMSFBITEhMSFBERFBQSExITEhMSFBEUEhE5EhMUNhI4EzgSOBI4EjgUEhM3EgAFsgABKJQTNxMTExITEhMSFBESFBM3EjgUNhQSExITEhMSFBEUEhMSExITEhEUFBIRFBI4ExISOBI5EzcTNxI4FDYUEhM3EwANBQ==Av'
       command_off: 'JgDYAAABKZITNxQSExITEhITExMTEhM3EjgTNxQSExITEhMSFBITEhMSERQTEhIUExITEhE5ExIUNhQ3EzcTNxM3FDcTEhE5EgAFswABKZIUNxMSEhMTExEUERQRFBI4FDcTNxMSERQSFBEUExIRFBITEhQTEhITExISExI4FBIRORM3EzcUNxE5EzcTEhQ3EwAFsQABKZMTNxMSEhMTExEUExISExI4FDcTNxMSExISFBEUERQSExMTERQRFBEUExITExE5ExIRORM3FDcTNxM3EzcSFBE5EwANBQ=='
-    marantz:
-      friendly_name: 'Marantz On/Off'
-      command_on: 'JgBoABsfHB4cHjkfGx8bHxsfGx8cOxweOR8bAAuYHB8bHxsfOR4cHhwfGx8bHxs8HB45HhwAC5kbHxsfHB45HxsfGx8bHxsfHDscHjkfGwALmRsfHB4cHzgfGx8bHxweHB4cOxwfOB8bAA0F'
-      command_off: 'JgAwABwfODw4HxweHB4cHhweHDwbHzgfHAALmBweOTs5HxsfGx8bHxweHDscHzgfGwANBQAAAAAAAAAA'
+#    marantz:
+#      friendly_name: 'Marantz On/Off'
+#      command_on: 'JgBoABsfHB4cHjkfGx8bHxsfGx8cOxweOR8bAAuYHB8bHxsfOR4cHhwfGx8bHxs8HB45HhwAC5kbHxsfHB45HxsfGx8bHxsfHDscHjkfGwALmRsfHB4cHzgfGx8bHxweHB4cOxwfOB8bAA0F'
+#      command_off: 'JgAwABwfODw4HxweHB4cHhweHDwbHzgfHAALmBweOTs5HxsfGx8bHxweHDscHzgfGwANBQAAAAAAAAAA'
+    sony_bluray:
+      friendly_name: 'Blu-Ray On/Off'
+      command_on: 'JgCMAU8UJxQTFCcUExQoFBIVFBMTFScUExQoEygTExUnFBMUExUSFScUJxQnAAGbTxQmFRMUJxQUFCcUExQUFBMUJhUTFCgTJxUSFSYVExUTFBMUKBMoEygAAZtOFCcUFBQnFBMUJxQTFRIVFBMoExMVJxQnFBQTJxQTFRMUExUoEyYVJgABnE8TKBQSFScUExQnFBMVExQUFCcUExQnFCgTExUmFRMUExUTFCcUJhUnAAGbTxQmFRMUJxQUFCYVEhUTFBQUJxQTFCcUJxQTFSYVExQTFRIVJxQnFCcAAZtPFCcUExQoExMVJxQTFBMVEhUnFBQTKBMoExQUJxQTFBMVExQnFCgTJwABm04VJhUUEygTExUnFBMUExUSFScUExQoFCcUExQnFBMVExQTFCcUKBQmAAGcThQnFBMVJhUTFCcUExUSFRMUJxQTFScUJxQUEycUExUTFBMVJxQnFCYAAZxOFCgTExUnFBMUKBMTFRMUExQnFRIVJxQnFBQUJhUSFRMUFBQnFCYVJwANBQAAAAAAAAAAAAAAAA=='  
+      command_off: 'JgCMAU8UJxQTFCcUExQoFBIVFBMTFScUExQoEygTExUnFBMUExUSFScUJxQnAAGbTxQmFRMUJxQUFCcUExQUFBMUJhUTFCgTJxUSFSYVExUTFBMUKBMoEygAAZtOFCcUFBQnFBMUJxQTFRIVFBMoExMVJxQnFBQTJxQTFRMUExUoEyYVJgABnE8TKBQSFScUExQnFBMVExQUFCcUExQnFCgTExUmFRMUExUTFCcUJhUnAAGbTxQmFRMUJxQUFCYVEhUTFBQUJxQTFCcUJxQTFSYVExQTFRIVJxQnFCcAAZtPFCcUExQoExMVJxQTFBMVEhUnFBQTKBMoExQUJxQTFBMVExQnFCgTJwABm04VJhUUEygTExUnFBMUExUSFScUExQoFCcUExQnFBMVExQTFCcUKBQmAAGcThQnFBMVJhUTFCcUExUSFRMUJxQTFScUJxQUEycUExUTFBMVJxQnFCYAAZxOFCgTExUnFBMUKBMTFRMUExQnFRIVJxQnFBQUJhUSFRMUFBQnFCYVJwANBQAAAAAAAAAAAAAAAA=='  
+
 
 
 
@@ -121,4 +127,41 @@
          service: alarm_control_panel.alarm_trigger
        turn_off:
          service: alarm_control_panel.alarm_disarm  
+     filmdags:
+       friendly_name: "Filmdags"
+       value_template: "{{ is_state('input_boolean.filmdags', 'on') }}"
+       turn_on:
+         service: homeassistant.turn_on
+         entity_id:  input_boolean.filmdags
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: input_boolean.filmdags
+     netflix:
+       friendly_name: "Netflix"
+       value_template: "{{ is_state('input_boolean.netflix', 'on') }}"
+       turn_on:
+         service: homeassistant.turn_on
+         entity_id:  input_boolean.netflix
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: input_boolean.netflix
+     spotify:
+       friendly_name: "Spotify"
+       value_template: "{{ is_state('input_boolean.spotify', 'on') }}"
+       turn_on:
+         service: homeassistant.turn_on
+         entity_id:  input_boolean.spotify
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: input_boolean.spotify
+     hemmabio_off:
+       friendly_name: "Stäng av Hemmabio"
+       value_template: "{{ is_state('input_boolean.hemmabio_off', 'off') }}"
+       turn_on:
+         service: homeassistant.turn_off
+         entity_id:  input_boolean.hemmabio_off
+       turn_off:
+          service: homeassistant.turn_off
+          entity_id: input_boolean.hemmabio_off
+
 
