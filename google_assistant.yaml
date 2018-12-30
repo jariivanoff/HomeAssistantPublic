@@ -6,6 +6,7 @@ exposed_domains:
    - mediaplayer
    - light
    - group
+   - climate
 
 entity_config:
   light.all_windows:
@@ -39,6 +40,7 @@ entity_config:
     expose: true
     aliases:
      - taket
+     - roof
     room: Badrummet
 
   light.spegel:
@@ -46,6 +48,7 @@ entity_config:
     expose: true
     aliases:
      - spegeln
+     - mirror
     room: Badrummet
 
 # Linus rum
@@ -54,6 +57,7 @@ entity_config:
     expose: true
     aliases:
      - taket
+     - roof
     room: Linus rum
 
 # Ellas rum
@@ -62,6 +66,7 @@ entity_config:
     expose: true
     aliases:
      - taket
+     - roof
     room: Ellas rum
 
 # Hallen
@@ -96,6 +101,7 @@ entity_config:
     expose: true
     aliases:
     - taket
+    - roof
     room: Vardagsrummet
   
   light.couchh:
@@ -103,20 +109,21 @@ entity_config:
     expose: true
     aliases:
     - soffan
-    room: Vardagsrum met   
+    room: Vardagsrummet   
 
   media_player.kodi_tv_rum:
     name: Kodi TV rum
     expose: true
     aliases:
     - kodi tvrum
-    - media player tv rum
+    - media player tv
     room: Vardagsrummet
    
   media_player.sony_bravia_tv:
     name: TV
     aliases:
     - TV
+    - TVn
     room: Vardagsrummet
 
 # Köket
@@ -125,7 +132,7 @@ entity_config:
     expose: true
     aliases:
      - spisen
-     - kitchenfan
+     - fan
     room: Köket
 
   light.kitchensink:
@@ -149,9 +156,9 @@ entity_config:
     name: Tak
     expose: true
     aliases:
-     - sovrummet
-     - bedroom
-    room: Sovrum
+     - taket
+     - roof
+    room: Sovrummet
 
   light.sovrumfh:
     name: Fönster
@@ -167,6 +174,7 @@ entity_config:
     expose: true
     aliases:
      - taket
+     - roof
     room: Kökshallen
 
   light.kokshall_vagg:
@@ -174,6 +182,7 @@ entity_config:
     expose: true
     aliases:
      - väggen
+     - wall
     room: Kökshallen
 
 # Finrum
@@ -182,18 +191,51 @@ entity_config:
     expose: true
     aliases:
      - Vitrinskåpet
+     - display case
     room: Finrummet
 
+  climate.markplan:
+    expose: true
+    name: Temp Markplan
+    aliases:
+    - uppetemp
+    - groundfloortemp
+    room: Huset
 
- 
+  climate.kallare:
+    expose: true
+    name: Temp Källare
+    aliases:
+    - källartemp
+    - basementtemp
+    room: Huset
+
+  climate.utomhus:
+    expose: true
+    name: Temp Ute
+    aliases:
+    - utetemp
+    - outdoorstemp
+    room: Utomhus
+
+
   switch.heatpump:
     name: Värmepumpen
     expose: true
     aliases:
     - värmen
     - heat
-    room: Hela Huset
+    room: Huset
 
+  switch.sonoffs2004:
+    name: Cirkulationspump
+    expose: true
+    aliases:
+    - pumpen
+    - pump
+    - cirkulationspumpen
+    - circulationpump
+    room: Huset
 
   switch.alarm_away:
     name: Larm Borta
@@ -201,7 +243,7 @@ entity_config:
     aliases:
     - larm borta
     - alarm away
-    room: Hela Huset
+    room: Huset
     
   switch.alarm_home:
     name: Larm Hemma
@@ -209,7 +251,7 @@ entity_config:
     aliases:
     - larm hemma
     - alarm home
-    room: Hela Huset
+    room: Huset
 
   switch.alarm_trig:
     name: Trigga Larm 
@@ -217,7 +259,7 @@ entity_config:
     aliases:
     - trigga larm 
     - alarm trigg
-    room: Hela Huset
+    room: Huset
     
   script.alarm_disarm:
     name: Larm Av
@@ -225,7 +267,7 @@ entity_config:
     aliases:
     - larma av
     - alarm disarm
-    room: Hela Huset
+    room: Huset
 
 # Gillestuga
   light.fronth:
@@ -275,13 +317,13 @@ entity_config:
     - desk
     room: Gillestugan
 
-  group.movietime:
-    name: Filmdags
-    expose: true
-    aliases:
-    - filmtime
-    - movietime
-    room: Gillestugan
+ # group.movietime:
+ #   name: Filmdags
+ #   expose: true
+ #   aliases:
+ #   - filmtime
+ #   - movietime
+ #   room: Gillestugan
 
   media_player.kodi_gillestuga:
     name: Kodi Gillestuga
@@ -290,12 +332,52 @@ entity_config:
     - kodi 
     - mediaplayer 
     room: Gillestugan
+  
+  media_player.marantz:
+    name: Förstärkaren
+    expose: true
+    aliases:
+    - förstärkaren
+    - hemmabion
+    - amplifier
+    room: Gillestugan
+  
+  switch.filmdags:
+    name: Filmdags
+    expose: true
+    aliases:
+    - filmdags
+    - movietime
+    room: Gillestugan
+  
+  switch.netflix:
+    name: Netflix
+    expose: true
+    aliases:
+    -  netflix
+    room: Gillestugan
+  
+  switch.spotify:
+    name: Spotify
+    expose: true
+    aliases:
+    - spotify
+    - musik
+    - music
+    room: Gillestugan
 
+  switch.hemmabio_off:
+    name: "Stäng av hemmabion"
+    expose: true
+    aliases:
+    - hemmabio 
+    - movie off
+    room: Gillestugan
 # Bilen
   switch.pexen_heater:
     name: Motorvärmare
     expose: true
     aliases:
     - motorvärmare
-    - car heater
+    - carheater
     room: Bilen 
