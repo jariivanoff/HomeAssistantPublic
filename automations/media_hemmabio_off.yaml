@@ -1,0 +1,21 @@
+alias: "Hemmabio Off"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: input_boolean.hemmabio_off
+  to: 'off'
+action:
+  - service: homeassistant.turn_off
+    entity_id: switch.projektor
+  - service: homeassistant.turn_off
+    entity_id: switch.projwlhdmi
+  - service: media_player.turn_off
+    entity_id: media_player.marantz
+  - service: homeassistant.turn_off
+    entity_id: switch.sony_bluray
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.filmdags
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.netflix
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.spotify

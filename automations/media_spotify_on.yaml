@@ -1,0 +1,15 @@
+alias: "Spotify"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: input_boolean.spotify
+  to: 'on'
+action:
+  - service: media_player.turn_on
+    entity_id: media_player.marantz
+  - delay: "00:00:10"
+  - service: media_player.select_source
+    data:
+       entity_id: media_player.marantz
+       source: CCA
+

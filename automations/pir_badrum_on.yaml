@@ -2,14 +2,14 @@ alias: "Turn on bathroom light "
 initial_state: true
 trigger:
   platform: state
-  entity_id: binary_sensor.presence_29
+  entity_id: binary_sensor.badrummet
   to: 'on'
 condition:
   - condition: numeric_state
-    entity_id: sensor.lightlevel_28
+    entity_id: sensor.badrummet
     below: 400
 action:
-  service: homeassistant.turn_on
+  service: light.turn_on
   entity_id: light.spegel
   data_template:
     transition: 2

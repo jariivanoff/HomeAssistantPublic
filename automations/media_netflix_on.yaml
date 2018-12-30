@@ -1,0 +1,18 @@
+alias: "Netflix"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: input_boolean.netflix
+  to: 'on'
+action:
+  - service: homeassistant.turn_on
+    entity_id: switch.projektor
+  - service: media_player.turn_on
+    entity_id: media_player.marantz
+  - delay: "00:00:10"
+  - service: media_player.select_source
+    data:
+       entity_id: media_player.marantz
+       source: DVD
+  - service: homeassistant.turn_on
+    entity_id: switch.projwlhdmi

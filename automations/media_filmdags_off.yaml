@@ -1,0 +1,16 @@
+alias: "Filmdags Av"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: input_boolean.filmdags
+  to: 'off'
+action:
+  - service: homeassistant.turn_off
+    entity_id: switch.projektor
+  - service: homeassistant.turn_off
+    entity_id: switch.projwlhdmi
+  - service: homeassistant.turn_off
+    entity_id: switch.marantz
+#  - service: mediaplayer.turn_on
+#    entity_id: mediaplayer.marantz
+

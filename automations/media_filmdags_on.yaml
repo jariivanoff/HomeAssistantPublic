@@ -1,0 +1,26 @@
+alias: "Filmdags"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: input_boolean.filmdags
+  from: 'off'
+  to: 'on'
+action:
+  - service: homeassistant.turn_on
+    entity_id: switch.projektor
+ # - service: homeassistant.turn_on
+ #   entity_id: switch.sony_bluray
+  - service: media_player.turn_on
+    entity_id: media_player.marantz
+  - service: homeassistant.turn_on
+    entity_id: switch.projwlhdmi
+  - service: homeassistant.turn_on
+    entity_id: switch.sony_bluray
+  - delay: "00:00:10"
+  - service: media_player.select_source
+    data:
+       entity_id: media_player.marantz
+       source: "Blu-ray"
+  - service: script.sony_bluray_eject
+  - service: script.proj_set_wlhdmi
+    

@@ -2,11 +2,10 @@ alias: "Turn on Kökshall light "
 initial_state: true
 trigger:
   platform: state
-  entity_id: binary_sensor.presence_26
-  to: 'on'
+  entity_id: binary_sensor.kokshallen
 condition:
   - condition: numeric_state
-    entity_id: sensor.lightlevel_25
+    entity_id: sensor.kokshallen
     below: 30
 action:
   service: homeassistant.turn_on

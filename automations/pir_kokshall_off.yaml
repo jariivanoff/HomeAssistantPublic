@@ -2,13 +2,13 @@ alias: "Släck Kökshallen Tak efter 1 minut"
 initial_state: true
 trigger:
   platform: state
-  entity_id: binary_sensor.presence_26
+  entity_id: binary_sensor.kokshallen
   to: 'off'
   for:
     minutes: 1
 condition:
   - condition: state
-    entity_id: binary_sensor.presence_26
+    entity_id: binary_sensor.kokshallen
     state: 'off'
 action:
   - service: homeassistant.turn_on
