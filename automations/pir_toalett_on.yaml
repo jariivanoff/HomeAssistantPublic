@@ -1,0 +1,16 @@
+alias: "Turn on toilette light "
+initial_state: true
+trigger:
+  platform: state
+  entity_id:  binary_sensor.toaletten
+  to: 'on'
+action:
+  - service: light.turn_on
+    entity_id: light.toaletten
+    data_template:
+      transition: 2
+      brightness_pct: >
+         {% if (now().hour >= 00) and (now().hour <= 05) %}5{% else %}100{% endif %}
+  - service: switch.turn_on
+    entity_id: switch.toaflakt
+

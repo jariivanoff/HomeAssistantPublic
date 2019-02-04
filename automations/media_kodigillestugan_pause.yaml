@@ -1,0 +1,13 @@
+alias: "Tänd ljus CC Gillestuga Paus"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: media_player.kodi_libreelec_local
+  to: 'paused'
+action:
+  service: homeassistant.turn_on
+  entity_id:  light.stereoh
+  data_template:
+    transition: 2
+    brightness_pct: 40
+       

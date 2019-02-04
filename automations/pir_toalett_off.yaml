@@ -1,29 +1,29 @@
-alias: "Turn off bathroom light 2 minutes after last movement"
+alias: "Turn off toilette light 2 minutes after last movement"
 initial_state: true
 trigger:
   platform: state
-  entity_id: binary_sensor.badrummet
+  entity_id: binary_sensor.toaletten
   to: 'off'
   for:
-    minutes: 1
+    minutes: 5
 condition:
    condition: and
    conditions:
      - condition: state
-       entity_id: binary_sensor.badrummet
+       entity_id: binary_sensor.toaletten
        state: 'off'
-     - condition: template
-       value_template: '{{ states.light.badrumstak.state != on }}'
 action:
+  - service: switch.turn_off
+    entity_id: switch.toaflakt
   - service: light.turn_on
-    entity_id: light.spegel
+    entity_id: light.toaletten
     data:
       transition: 5
       brightness_pct: 5
 #         {% if (now().hour >= 00) and (now().hour <= 05) %}5{% else %}50{% endif %}
   - delay: '00:01:00'
   - service: light.turn_off
-    entity_id: light.spegel
+    entity_id: light.toaletten
     data:
       transition: 5
       

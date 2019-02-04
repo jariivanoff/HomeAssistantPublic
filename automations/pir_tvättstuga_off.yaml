@@ -1,4 +1,4 @@
-alias: "Släck Kökshallen Tak efter 1 minut"
+alias: "Släck Tvättstugan Tak efter 1 minut"
 initial_state: true
 trigger:
   platform: state

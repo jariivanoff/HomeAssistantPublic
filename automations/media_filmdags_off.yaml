@@ -1,5 +1,5 @@
 alias: "Filmdags Av"
-initial_state: true
+initial_state: False
 trigger:
   platform: state
   entity_id: input_boolean.filmdags

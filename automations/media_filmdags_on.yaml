@@ -23,4 +23,6 @@ action:
        source: "Blu-ray"
   - service: script.sony_bluray_eject
   - service: script.proj_set_wlhdmi
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.hemmabio
     

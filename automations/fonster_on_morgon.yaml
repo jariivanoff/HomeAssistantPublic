@@ -30,5 +30,5 @@ action:
   entity_id: 
     - light.all_windows
   data:
-     transition: 60
+     transition: 120
      brightness_pct: 60 

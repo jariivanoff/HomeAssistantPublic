@@ -2,7 +2,7 @@ alias: "Hemmabio Off"
 initial_state: true
 trigger:
   platform: state
-  entity_id: input_boolean.hemmabio_off
+  entity_id: input_boolean.hemmabio
   to: 'off'
 action:
   - service: homeassistant.turn_off

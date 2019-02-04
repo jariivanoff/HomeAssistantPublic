@@ -1,0 +1,11 @@
+alias: "Släck ljus CC Gillestuga Fortsätt"
+initial_state: true
+trigger:
+  platform: state
+  entity_id: media_player.cc_gillestugan
+  to: 'playing'
+action:
+  - service: homeassistant.turn_off
+    entity_id:  light.stereoh
+  - service: homeassistant.turn_off
+    entity_id:  light.kallarhall
