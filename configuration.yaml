@@ -15,7 +15,8 @@ homeassistant:
 
 # Show links to resources in log and frontend
 #introduction:
-
+#lovelace:
+ # mode: yaml
 
 # Enables the frontend
 frontend:
@@ -120,7 +121,8 @@ google:
 
 # Telldus, Tellstick.Net
 tellduslive:
-
+  host: 192.168.1.148
+  
 # MQTT Servern
 mqtt:
   broker: 192.168.1.133

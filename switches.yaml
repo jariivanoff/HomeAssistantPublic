@@ -63,7 +63,7 @@
 # Sonoff S20 MQTT
 ## Cirkulationspump Radiatorer Sonoff S20-04
  - platform: mqtt
-   name: "sonoffS20-04"
+   name: "sonoffS2004"
    state_topic: "cmnd/sonoffs2004/power"
    #state_topic: "stat/sonoffs2004"
    command_topic: "cmnd/sonoffs2004/power"
@@ -164,3 +164,18 @@
           entity_id: input_boolean.hemmabio_off
 
 
+# Shelly Toa
+ - platform: mqtt
+   name: "Toafläkt"
+   state_topic: "shellies/shelly1-5B364D/relay/0"
+   command_topic: "shellies/shelly1-5B364D/relay/0/command"
+   payload_on: "on"
+   payload_off: "off"
+   retain: false
+   
+   
+   #availability_topic: "shellies/shelly1-5B364D/online"
+   #payload_available: "true"
+   #optimistic: false
+   #qos: 0
+   

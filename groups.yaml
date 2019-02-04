@@ -54,12 +54,12 @@ kallarhallen:
   entities:
   - light.kallarhall
 
-other:
-  view: false
-  name: Annat
-  entities:
-  - switch.ute_fontanen
-  - switch.skymningssensor_ute
+#other:
+#  view: false
+#  name: Annat
+#  entities:
+#  - switch.ute_fontanen
+#  - switch.skymningssensor_ute
 
 badrum:
   view: false
@@ -359,15 +359,15 @@ sensors:
   name: Sensorer
   entities:
   - binary_sensor.tradfri_motion_sensor
-  - binary_sensor.presence_26
-  - sensor.lightlevel_25
-  - binary_sensor.presence_29
-  - sensor.lightlevel_28
+  #- binary_sensor.presence_26
+  #- sensor.lightlevel_25
+  #- binary_sensor.presence_29
+  #- sensor.lightlevel_28
   - sensor.moon
   - sun.sun
-  - sensor.yr_symbol
+  #- sensor.yr_symbol
   - sensor.day_night
-  - sensor.weather
+  #- sensor.weather
   - sensor.net_temp_ute_temperature
   - sensor.net_temp_ute2_temperature
   - sensor.medeltemp_markplan
@@ -403,7 +403,7 @@ volvo_switches:
   name: Kontroller
   view: false
   entities:
-  - lock.pexen_lock
+  - lock.pexen_door_lock
   - switch.pexen_heater
 
 temperatures:
@@ -615,7 +615,7 @@ system:
   - sensor.cpu_use
   - sensor.ram_free
   - sensor.average_load_5m
-  - sensor.disk_use_
+  - sensor.disk_use_percent
   - sensor.certifikat
 #  - script.backup 
   
@@ -647,12 +647,13 @@ MQTTSwitch:
  - group.sonoffbasic
  - group.sonoffpow01
  - group.sonoffpow02
+ - group.shelly
 
 sonoffs20:
  view: false
  name: "Sonoff S20"
  entities:
- - light.sonoffs2001
+ - light.skrivbord
  - light.fonster_stora_hallen
  - light.uplight_bak
  - light.sonoffs2004
@@ -662,9 +663,9 @@ sonoffbasic:
  view: false
  name: "Sonoff Basic"
  entities:
- - light.sonoffbasic01
- - light.sonoffbasic02
- - light.sonoffbasic03
+ - light.gillestuga_fonster_bak
+ - light.gillestuga_fonster_fram
+ - light.vitrinskap
 
 sonoffpow01:
  view: false
@@ -690,6 +691,11 @@ sonoffpow02:
  - sensor.sonoffpow02_yesterday
  - sensor.sonoffpow02_total
 
+shelly:
+ view: false
+ name: "Shellies"
+ entities:
+ - switch.toaflakt
 
 envisalink_sensors:
  view: false
@@ -744,7 +750,7 @@ movietime:
   entities:
   - switch.projektor
   - switch.projwlhdmi
-  - switch.marantz
+  #- switch.marantz
   - script.marantz_set_dvd
   - script.proj_set_wlhdmi
 

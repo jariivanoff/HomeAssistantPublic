@@ -243,7 +243,8 @@
       - service: switch.broadlink_send_packet_192_168_3_116
         data:
           packet: 
-            - 'JgCwAQABKJMTOBI4EhMTEhMSExMSExI4EjgTEhM4EhMSOBITEzgSExITEhMTEhM4EjgSOBI4ExMSOBI4EjgTExITEhMSExI4EwAFQwABKJMTOBI4EhMTEhMTEhMSExI4EzcTExI4EhMSOBMSEzgSExITExITExI4EjgSOBM3ExMSOBI4EzcTExITEhMSExM4EgAFQwABJ5USOBI4EhMTEhMTEhMSExI4EzgSExI4EhMTNxMTEjgSExITExITExI4EjgSOBM4EhMSOBI4EzcTExITEhMTEhM4EgAFQwABKJQSOBI4EhMTExITEhMSExM3EzgSExI4EhMTNxMTEjgSExITExMSExI4EjgTNxM4EhMSOBI4EzgSExITEhMTEhM4EgAFQwABKJQSOBI4EhMTEhMTEhMSExI4EzcTExI4EhMSOBMTEjgSExITEhMSFBI4EjgSOBI4ExMSOBI4EjgTEhMTEhMSExI4EwAFQwABKJMTNxM4EhMSExITExMSExI4EjgTEhM4EhMSOBITEzYUExITEhMSExM4EjgSOBI4ExITOBI4EjcTExMTEhMSExE5EgANBQAAAAAAAAAA'
+            - 'JgUgAQABKJMTOBI4EhMTEhMTEhMSExM3EjgTExI4EhMTNxITEzgSExITExITEhM3EzgSOBI4EhMTNxM4FDYSExMSExMSExI4EgAFQwABKJMTOBI4EhMTEhMTEhMSExM3EjgTExI4EhMTNxITEzgSExITExITEhM4FDYSOBI4EhMTOBQ2EjgSExMSExMSExI4EgAFQwABKJMTOBI4EhMTEhMTEhMSExI4EzcSExM4EhMTNxMSEzcTExITExITEhM3EzgSOBM3EhMTNxM4EjgSExMSExMSExI4EgAFQwABKpISOBI4EhMTEhMTEhMSExM3EjgSFBI4EhMSOBITEzcTExITEhMTEhM3EzcTOBI4EhMTNxM4EjgSExMSExITExI4EgANBQAAAAAAAAAA'
+
             
 
   marantz_set_bd:
@@ -384,7 +385,16 @@
          entity_id: media_player.sony_bravia_tv
          volume_level: 8
 
-
+  ella_colorloop:
+    alias: 'Colorloop Ella'
+    #value_template: "{{ is_state('light.ellah', 'on') }}"
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id:  light.ellah
+          brightness: 255
+          effect: colorloop
+       
 
 #  backup:
 #   alias: Backup HA Configuration To Dropbox
