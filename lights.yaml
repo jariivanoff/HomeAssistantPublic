@@ -47,8 +47,6 @@
    optimistic: false
    qos: 0
    retain: true
-
-
 #Sonoff BASIC MQTT
 # Sonoffbasic01
  - platform: mqtt
@@ -86,18 +84,18 @@
    optimistic: false
    qos: 0
    retain: true
-
+# Template lights
  - platform: template
    lights:
      ute_koksdorren:
        friendly_name: "Ute Köksdörren"
        turn_on:
-         service: homeassistant.turn_on
+         service: switch.turn_on
          entity_id:  switch.net_koksdorren_ute
        turn_off:
-          service: homeassistant.turn_off
+          service: switch.turn_off
           entity_id: switch.net_koksdorren_ute
-
+# Light Groups
  - platform: group
    name: all_windows
    friendly_name: "Alla Fönsterlampor"
@@ -119,8 +117,6 @@
      - light.tvattstugan_fh
      - light.gula_rummet_fh
      - light.grona_rummet_fh
- 
-
 # Stora Hallen
  - platform: group
    name: halldoor
@@ -128,21 +124,18 @@
    entities:
      - light.halled1h
      - light.halled2h
-
  - platform: group
    name: hallbath
    friendly_name: "Stora Hallen Bad"
    entities:
      - light.halleb1h
      - light.halleb2h
- 
  - platform: group
    name: "Fönster Stora Hallen"
    friendly_name: "Fönster Stora Hallen"
    entities:
      - light.stora_hallen_f1
      - light.stora_hallen_f2
-
 # Kökshall Vägg
  - platform: group
    name: kokshall_vagg
@@ -150,7 +143,6 @@
    entities:
      - light.kokshall_vagg_1
      - light.kokshall_vagg_2 
-  
 # Utomhus
  - platform: group
    name: outdoors
@@ -159,8 +151,6 @@
      - light.ute_balkongen
      - light.ute_stora_entren
      - light.ute_koksdorren
-
-
 # Ute Stora Entrén
  - platform: group
    name: ute_stora_entren
@@ -168,9 +158,6 @@
    entities:
      - light.stora_entren_1
      - light.stora_entren_2
-     
- 
-
 # Vardagsrum 
  - platform: group
    name: vardagsrumt
@@ -178,7 +165,6 @@
    entities:
      - light.tak1h
      - light.tak2h
-
 # Tvättstuga
  - platform: group
    name: tvattstuga
@@ -186,7 +172,6 @@
    entities:
      - light.tvattstuga1
      - light.tvattstuga2
-
 # Källarhall
  - platform: group
    name: kallarhall
@@ -194,7 +179,6 @@
    entities:
      - light.kallarhall1
      - light.kallarhall2
-
 # Sovrum
  - platform: group
    name: sovrumt
@@ -203,7 +187,6 @@
      - light.taks1h
      - light.taks2h
      - light.taks3h
-
 # Köket 
  - platform: group
    name: kitchenfan
@@ -211,7 +194,6 @@
    entities:
      - light.fan1h
      - light.fan2h
-     
  - platform: group
    name: kitchensink
    friendly_name: "Diskbänk"
@@ -220,7 +202,6 @@
      - light.diskbank2h
      - light.diskbank3h
      - light.diskbank4h
-
  #- platform: group
  #  name: all_house
  #  friendly_name: "Hela Huset"
